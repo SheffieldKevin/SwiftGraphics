@@ -65,8 +65,10 @@ public extension CGContext {
 
     func with(transform: CGAffineTransform, @noescape block: () -> Void) {
         with() {
+            CGContextSaveGState(self)
             CGContextConcatCTM(self, transform)
             block()
+            CGContextRestoreGState(self)
         }
     }
 
