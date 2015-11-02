@@ -263,6 +263,27 @@
 			remoteGlobalIDString = 454D550619AA5CE6000E3EB3;
 			remoteInfo = SwiftGraphics_OSX;
 		};
+		6EF8084F1BE791AD005F0975 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45E8EEA4199A8E080035C722;
+			remoteInfo = SwiftUtilities_OSX;
+		};
+		6EF808511BE791AD005F0975 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45E8EEC6199A8EA50035C722;
+			remoteInfo = SwiftUtilities_iOS;
+		};
+		6EF808531BE791AD005F0975 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45E8EEE2199A90720035C722;
+			remoteInfo = SwiftUtilities_OSX_Tests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -802,6 +823,16 @@
 			name = "Very WIP";
 			sourceTree = "<group>";
 		};
+		6EF808491BE791AD005F0975 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6EF808501BE791AD005F0975 /* SwiftUtilities.framework */,
+				6EF808521BE791AD005F0975 /* SwiftUtilities.framework */,
+				6EF808541BE791AD005F0975 /* SwiftUtilities_OSX_Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -975,6 +1006,12 @@
 			mainGroup = 454D54FD19AA5CE6000E3EB3;
 			productRefGroup = 454D550819AA5CE6000E3EB3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6EF808491BE791AD005F0975 /* Products */;
+					ProjectRef = 4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				45B8AE8F19BCE56E00C61A3F /* All */,
@@ -988,6 +1025,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6EF808501BE791AD005F0975 /* SwiftUtilities.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftUtilities.framework;
+			remoteRef = 6EF8084F1BE791AD005F0975 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6EF808521BE791AD005F0975 /* SwiftUtilities.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftUtilities.framework;
+			remoteRef = 6EF808511BE791AD005F0975 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6EF808541BE791AD005F0975 /* SwiftUtilities_OSX_Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftUtilities_OSX_Tests.xctest;
+			remoteRef = 6EF808531BE791AD005F0975 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		451D29071A8A911F00209FE3 /* Resources */ = {
