@@ -8,6 +8,7 @@
 
 import SwiftGraphics
 import SwiftUtilities
+import SwiftRandom
 
 // TODO: This needs a much better name.
 public func tiled(context: CGContext, tileSize: CGSize, dimension: IntSize, origin: CGPoint = CGPoint(x: 0.5, y: 0.5), @noescape block: CGContext -> Void) {
@@ -39,7 +40,7 @@ public func tiled(context: CGContext, tileSize: CGSize, dimension: IntSize, orig
 
 public func stylesForMarkup(markup: [Markup]) -> [String: SwiftGraphics.Style] {
 
-    let rng = SwiftUtilities.random
+    let rng = SwiftRandom.random
 
     var styles: [String: SwiftGraphics.Style] = [:]
     for item in markup {

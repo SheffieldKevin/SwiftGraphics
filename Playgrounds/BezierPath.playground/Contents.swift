@@ -1,5 +1,9 @@
 // Playground - noun: a place where people can play
 
+// Order of imports is very important
+import CoreGraphics
+import SwiftUtilities
+import SwiftRandom
 import SwiftGraphics
 import SwiftGraphicsPlayground
 
@@ -10,33 +14,30 @@ CGContextTranslateCTM(context, 20, 20)
 
 let curves = [
     BezierCurve(
-        start: CGPoint(x: 10,y: 0),
-        control1: CGPoint(x: -10,y: 180),
-        control2: CGPoint(x: 150,y: 200),
-        end: CGPoint(x: 200,y: 0)),
+        start: CGPoint(x: 10, y: 0), control1: CGPoint(x: -10, y: 180), control2: CGPoint(x: 150, y: 200), end: CGPoint(x: 200, y: 0)),
     ]
 
 let styles = [
     "control":Style(elements: [
-        .strokeColor(CGColor.redColor()),
+        .StrokeColor(CGColor.redColor()),
     ]),
     "start":Style(elements: [
-        .strokeColor(CGColor.redColor()),
+        .StrokeColor(CGColor.redColor()),
     ]),
     "end":Style(elements: [
-        .strokeColor(CGColor.redColor()),
+        .StrokeColor(CGColor.redColor()),
     ]),
     "controlLine":Style(elements: [
-        .strokeColor(CGColor.blueColor()),
-        .lineDash([5,5]),
+        .StrokeColor(CGColor.blueColor()),
+        .LineDash([5,5]),
     ]),
     "boundingBox":Style(elements: [
-        .strokeColor(CGColor.blueColor()),
-        .lineDash([5,5]),
+        .StrokeColor(CGColor.blueColor()),
+        .LineDash([5,5]),
     ]),
     "simpleBounds":Style(elements: [
-        .strokeColor(CGColor.blueColor()),
-        .lineDash([5,5]),
+        .StrokeColor(CGColor.blueColor()),
+        .LineDash([5,5]),
     ]),
 ]
 
@@ -47,4 +48,3 @@ for curve in curves {
 }
 
 context.nsimage
-

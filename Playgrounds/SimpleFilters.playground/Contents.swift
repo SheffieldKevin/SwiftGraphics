@@ -1,7 +1,11 @@
 //: Playground - noun: a place where people can play
-import Cocoa
-import CoreImage
+
+// Order of imports is very important
+import CoreGraphics
+import SwiftUtilities
+import SwiftRandom
 import SwiftGraphics
+import SwiftGraphicsPlayground
 
 //: CoreImage filters are exposed as unique classes.
 //: Unique filter classes are subclasses of the "Filter" class. Filter is _not_ a subclass of CIFilter.

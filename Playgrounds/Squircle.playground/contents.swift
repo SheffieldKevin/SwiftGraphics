@@ -19,13 +19,13 @@ var f5: CGFloat = 0.07491137
 var f6: CGFloat = 0.372823815
 var f7: CGFloat = 0.169059556
 
-f1 = 1.512996779;
-f2 = 1.000822998;
-f3 = 0.857108385;
-f4 = 0.636612366;
-f5 = 0.074140812;
-f6 = 0.375930619;
-f7 = 0.169408557;
+f1 = 1.512996779
+f2 = 1.000822998
+f3 = 0.857108385
+f4 = 0.636612366
+f5 = 0.074140812
+f6 = 0.375930619
+f7 = 0.169408557
 
 
 //var m =     CGPoint(x: cornerRadius * f1, y: 0.0)
@@ -56,13 +56,13 @@ chain = chain * CGAffineTransform(tx: -512, ty: -512)
 context.draw(chain)
 
 
-//chain = chain * CGAffineTransform(rotation: DegreesToRadians(90))
+//chain = chain * CGAffineTransform(rotation: degreesToRadians(90))
 //context.draw(chain)
 //
-//chain = chain * CGAffineTransform(rotation: DegreesToRadians(90))
+//chain = chain * CGAffineTransform(rotation: degreesToRadians(90))
 //context.draw(chain)
 //
-//chain = chain * CGAffineTransform(rotation: DegreesToRadians(90))
+//chain = chain * CGAffineTransform(rotation: degreesToRadians(90))
 //context.draw(chain)
 
 
@@ -96,6 +96,3 @@ for curve in chain.curves {
 "\n".join(lines)
 
 context.nsimage
-
-
-

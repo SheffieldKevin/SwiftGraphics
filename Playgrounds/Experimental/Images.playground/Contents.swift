@@ -194,6 +194,3 @@ image = image.with() {
 
 
 image.NSImage
-
-
-

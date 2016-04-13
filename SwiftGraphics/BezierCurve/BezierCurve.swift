@@ -39,7 +39,7 @@ public struct BezierCurve {
                 return .Cubic
             default:
                 return .OrderN(controls.count + 2)
-        }       
+        }
     }
     public var points: [CGPoint] {
         if let start = start {

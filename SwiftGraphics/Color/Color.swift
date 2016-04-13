@@ -16,7 +16,7 @@ public struct RGB {
     public var b: CGFloat = 0.0
 
     public init(r: CGFloat = 0.0, g: CGFloat = 0.0, b: CGFloat = 0.0) {
-        (self.r, self.g, self.b) = (r,g,b)
+        (self.r, self.g, self.b) = (r, g, b)
     }
 
     public init(tuple: (r: CGFloat, g: CGFloat, b: CGFloat)) {
@@ -32,7 +32,7 @@ extension RGB: Equatable {
 
 }
 
-public func ==(lhs: RGB, rhs: RGB) -> Bool {
+public func == (lhs: RGB, rhs: RGB) -> Bool {
     return lhs.r == rhs.r && lhs.g == rhs.g && lhs.b == rhs.b
 }
 
@@ -50,7 +50,7 @@ public struct HSV {
     public let v: CGFloat
 
     public init(h: CGFloat = 0.0, s: CGFloat = 0.0, v: CGFloat = 0.0) {
-        (self.h, self.s, self.v) = (h,s,v)
+        (self.h, self.s, self.v) = (h, s, v)
     }
 
     public init(tuple: (h: CGFloat, s: CGFloat, v: CGFloat)) {
@@ -58,7 +58,7 @@ public struct HSV {
     }
 
     public func toTuple() -> (CGFloat, CGFloat, CGFloat) {
-        return (h,s,v)
+        return (h, s, v)
     }
 }
 
@@ -69,7 +69,7 @@ extension HSV: CustomStringConvertible {
 extension HSV: Equatable {
 }
 
-public func ==(lhs: HSV, rhs: HSV) -> Bool {
+public func == (lhs: HSV, rhs: HSV) -> Bool {
     return lhs.h == rhs.h && lhs.s == rhs.s && lhs.v == rhs.v
 }
 
@@ -107,12 +107,12 @@ public func * (lhs: HSV, rhs: CGFloat) -> HSV {
 
 public func convert(hsv: HSV) -> RGB {
     var (h, s, v) = (hsv.h, hsv.s, hsv.v)
-    if (s == 0) {
-        return RGB(tuple: (v,v,v))
+    if s == 0 {
+        return RGB(tuple: (v, v, v))
     }
     else {
-        h *= 360.0;
-        if (h == 360.0) {
+        h *= 360.0
+        if h == 360.0 {
             h = 0.0
         }
         else {
@@ -126,17 +126,17 @@ public func convert(hsv: HSV) -> RGB {
 
         switch Int(i) {
             case 0:
-                return RGB(tuple: (v,t,p))
+                return RGB(tuple: (v, t, p))
             case 1:
-                return RGB(tuple: (q,v,p))
+                return RGB(tuple: (q, v, p))
             case 2:
-                return RGB(tuple: (p,v,t))
+                return RGB(tuple: (p, v, t))
             case 3:
-                return RGB(tuple: (p,q,v))
+                return RGB(tuple: (p, q, v))
             case 4:
-                return RGB(tuple: (t,p,v))
+                return RGB(tuple: (t, p, v))
             case 5:
-                return RGB(tuple: (v,p,q))
+                return RGB(tuple: (v, p, q))
             default:
                 fatalError("Cannot convert HSV to RGB")
         }
@@ -176,5 +176,3 @@ public func convert(rgb: RGB) -> HSV {
 
     return HSV(h: h, s: s, v: v)
 }
-
-

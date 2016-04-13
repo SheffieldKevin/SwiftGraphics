@@ -18,7 +18,7 @@ public func SGPRender(identifier: String, showView: ((identifier: String, view: 
     return demoView
 }
 
-public class DemoView : NSView {
+public class DemoView: NSView {
     public var drawBlock: ((ctx: CGContext, bounds: CGRect) -> Void)?
     public var tickBlock: ((time: NSTimeInterval, deltaTime: NSTimeInterval, fps: Double) -> Void)? { didSet { displayLink.start() } }
     let displayLink: CDisplayLink = CDisplayLink()

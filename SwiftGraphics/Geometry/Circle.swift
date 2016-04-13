@@ -7,24 +7,17 @@
 //
 
 import CoreGraphics
+import SwiftUtilities
 
 // MARK: Circle
 
 public struct Circle {
     public let center: CGPoint
     public let radius: CGFloat
-    public var diameter: CGFloat {
-        return radius * 2
-    }
-    
-    public init(center: CGPoint = CGPointZero, radius: CGFloat) {
+
+    public init(center: CGPoint = CGPoint.zero, radius: CGFloat) {
         self.center = center
         self.radius = radius
-    }
-    
-    public init(center: CGPoint = CGPointZero, diameter: CGFloat) {
-        self.center = center
-        self.radius = diameter * 0.5
     }
 }
 
@@ -34,7 +27,43 @@ extension Circle: Geometry {
     }
 }
 
-extension Circle {
+// MARK: -
+
+public extension Circle {
+    var diameter: CGFloat {
+        return radius * 2
+    }
+    init(center: CGPoint = CGPoint.zero, diameter: CGFloat) {
+        self.center = center
+        self.radius = diameter * 0.5
+    }
+}
+
+// MARK: -
+
+/// Create a Circle from any three non-colinear points
+public extension Circle {
+    init(points: (CGPoint, CGPoint, CGPoint)) throws {
+        // https://en.wikipedia.org/wiki/Circumscribed_circle#Cartesian_coordinates_2
+        let b = points.1 - points.0
+        let c = points.2 - points.0
+        let d = 2 * (b.x * c.y - b.y * c.x)
+        guard d != 0 else {
+            throw Error.Generic("Points are colinear")
+        }
+        let bms = b.magnitudeSquared
+        let cms = c.magnitudeSquared
+        let ux = (c.y * bms - b.y * cms) / d
+        let uy = (b.x * cms - c.x * bms) / d
+        let center = CGPoint(x: ux, y: uy)
+        let r = center.magnitude
+        self = Circle(center: center + points.0, radius: r)
+    }
+}
+
+// MARK: -
+
+public extension Circle {
 
     // TODO: Just convert into an ellipse.
     func toBezierCurves() -> (BezierCurve, BezierCurve, BezierCurve, BezierCurve) {

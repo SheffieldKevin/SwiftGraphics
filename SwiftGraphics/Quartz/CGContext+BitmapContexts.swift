@@ -31,7 +31,7 @@ public extension CGContext {
     }
 
 
-    class func bitmapContext(size: CGSize, origin: CGPoint = CGPointZero, color: CGColor = CGColor.clearColor()) -> CGContext! {
+    class func bitmapContext(size: CGSize, origin: CGPoint = CGPoint.zero, color: CGColor = CGColor.clearColor()) -> CGContext! {
 
         let colorspace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedFirst.rawValue)
@@ -58,7 +58,7 @@ public extension CGImageRef {
 }
 
 public extension CGContext {
-    class func imageWithBlock(size: CGSize, color: CGColor = CGColor.clearColor(), origin: CGPoint = CGPointZero, block: CGContext -> Void) -> CGImage! {
+    class func imageWithBlock(size: CGSize, color: CGColor = CGColor.clearColor(), origin: CGPoint = CGPoint.zero, block: CGContext -> Void) -> CGImage! {
         let context = bitmapContext(size, color: color, origin: origin)
         block(context)
         let cgimage = CGBitmapContextCreateImage(context)

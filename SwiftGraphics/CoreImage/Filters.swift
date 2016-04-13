@@ -1422,7 +1422,7 @@ public class CMYKHalftone: Filter {
         }
     }
 
-    /// The under color removal value. The value can vary from 0.0 to 1.0. 
+    /// The under color removal value. The value can vary from 0.0 to 1.0.
     public var inputUCR: CGFloat? {
         get {
             return valueForKey("inputUCR") as? CGFloat
@@ -2716,7 +2716,7 @@ public class CopyMachineTransition: Filter {
         }
     }
 
-    /// The width of the copier light. 
+    /// The width of the copier light.
     public var inputWidth: CGFloat? {
         get {
             return valueForKey("inputWidth") as? CGFloat
@@ -10311,7 +10311,7 @@ public class VignetteEffect: Filter {
 }
 
 /**
-Rotates pixels around a point to simulate a vortex. You can specify the number of rotations as well the center and radius of the effect. 
+Rotates pixels around a point to simulate a vortex. You can specify the number of rotations as well the center and radius of the effect.
 
 [More Information](http: //developer.apple.com/cgi-bin/apple_ref.cgi?apple_ref=//apple_ref/doc/filter/ci/CIVortexDistortion)
 */
@@ -10474,4 +10474,3 @@ public class ZoomBlur: Filter {
         }
     }
 }
-

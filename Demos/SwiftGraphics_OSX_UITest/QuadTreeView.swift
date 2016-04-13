@@ -13,10 +13,10 @@ import SwiftGraphics
 class QuadTreeView: NSView {
 
     var quadTree: SwiftGraphics.QuadTree <CGPoint>!
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+
         quadTree = QuadTree <CGPoint> (frame: bounds)
     }
 
@@ -53,7 +53,7 @@ class QuadTreeView: NSView {
             self.needsDisplay = true
         }
     }
-    
+
 }
 
 extension QuadTree {
@@ -65,7 +65,7 @@ extension QuadTree {
 extension QuadTreeNode {
     func render(context: CGContext) {
         context.strokeRect(self.frame)
-        
+
         if let subnodes = self.subnodes {
             for node in subnodes {
                 node.render(context)

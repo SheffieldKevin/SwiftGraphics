@@ -63,7 +63,7 @@ class BlendModesViewController: NSViewController {
         }
     }
 
-    var selectedBlendeMode: CGBlendMode = .Normal{
+    var selectedBlendeMode: CGBlendMode = .Normal {
         didSet {
             update()
         }
@@ -99,7 +99,7 @@ class BlendModesViewController: NSViewController {
 
         sourceImage = NSImage(size: CGSize(w: 200, h: 200)) {
             (context: CGContext) in
-            let t1 = Triangle(CGPoint(x: 100,y: 0), CGPoint(x: 200,y: 0), CGPoint(x: 100,y: 150))
+            let t1 = Triangle(CGPoint(x: 100, y: 0), CGPoint(x: 200, y: 0), CGPoint(x: 100, y: 150))
             let style = Style(elements: [StyleElement.fillColor(CGColor.blackColor())])
             context.draw(t1, style: style)
         }
@@ -107,7 +107,7 @@ class BlendModesViewController: NSViewController {
         destinationImage = NSImage(size: CGSize(w: 200, h: 200)) {
             (context: CGContext) in
 
-            let t1 = Triangle(CGPoint(x: 100,y: 200), CGPoint(x: 200,y: 200), CGPoint(x: 100,y: 0))
+            let t1 = Triangle(CGPoint(x: 100, y: 200), CGPoint(x: 200, y: 200), CGPoint(x: 100, y: 0))
             let style = Style(elements: [StyleElement.fillColor(CGColor.yellowColor())])
             context.draw(t1, style: style)
         }

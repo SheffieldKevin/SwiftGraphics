@@ -110,20 +110,20 @@ extension NSIndexSet {
 
     func with(maxCount: Int = 512, block: UnsafeBufferPointer <Int> -> Void) {
 
-        var range = NSMakeRange(0, count)
+        var range = NSRange(location: 0, length: count)
         var indices = Array <Int> (count: maxCount, repeatedValue: NSNotFound)
         indices.withUnsafeMutableBufferPointer() {
             (inout buffer: UnsafeMutableBufferPointer<Int>) -> Void in
 
             var count = 0
-            repeat  {
+            repeat {
                 count = self.getIndexes(buffer.baseAddress, maxCount: maxCount, inIndexRange: &range)
-                if count > 0 {
+                if isEmpty == false {
                     let constrained_buffer = UnsafeBufferPointer<Int> (start: buffer.baseAddress, count: count)
                     block(constrained_buffer)
                 }
             }
-            while count > 0
+            while isEmpty == false
         }
     }
 }

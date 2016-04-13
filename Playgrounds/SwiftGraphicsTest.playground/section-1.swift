@@ -38,10 +38,7 @@ context.with(Style(elements: circle_styles)) {
 let d = radius * 4.0 * (sqrt(2.0) - 1.0) / 3.0
 
 let quadrants = [
-    CGSize(w: -1.0, h: -1.0),
-    CGSize(w: 1.0, h: -1.0),
-    CGSize(w: -1.0, h: 1.0),
-    CGSize(w: 1.0, h: 1.0),
+    CGSize(w: -1.0, h: -1.0), CGSize(w: 1.0, h: -1.0), CGSize(w: -1.0, h: 1.0), CGSize(w: 1.0, h: 1.0),
 ]
 
 // Create a cubic bezier curve for the each quadrant of the circle...
@@ -49,10 +46,7 @@ let quadrants = [
 var curves = quadrants.map() {
     (quadrant: CGSize) -> BezierCurve in
     return BezierCurve(
-        start: center + CGPoint(x: radius) * quadrant,
-        control1: center + (CGPoint(x: radius) + CGPoint(y: d)) * quadrant,
-        control2: center + (CGPoint(y: radius) + CGPoint(x: d)) * quadrant,
-        end: center + CGPoint(y: radius) * quadrant
+        start: center + CGPoint(x: radius) * quadrant, control1: center + (CGPoint(x: radius) + CGPoint(y: d)) * quadrant, control2: center + (CGPoint(y: radius) + CGPoint(x: d)) * quadrant, end: center + CGPoint(y: radius) * quadrant
     )
 }
 
@@ -73,4 +67,3 @@ let markers: [Drawable] = points.map() {
 context.draw(markers, style: Style(elements: marker_styles))
 
 context.nsimage
-

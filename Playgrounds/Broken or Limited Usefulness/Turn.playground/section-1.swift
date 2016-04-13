@@ -16,4 +16,3 @@ var triangle = Triangle(rect: rect, rotation: DegreesToRadians(180))
 context.strokeLine(triangle.pointsArray, close: true)
 
 context.nsimage
-

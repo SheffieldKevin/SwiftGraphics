@@ -17,8 +17,8 @@ public enum CircularDirection {
     }
 
 public struct Arc {
-    public var center: CGPoint = CGPointZero
-    public var size: CGSize = CGSizeZero
+    public var center: CGPoint = CGPoint.zero
+    public var size: CGSize = CGSize.zero
     public var startAngle: CGFloat = 0 // Currently degrees
     public var endAngle: CGFloat = 360 // Currently degrees
 //    var direction: CircularDirection = .Clockwise
@@ -28,12 +28,12 @@ public struct Arc {
 extension CGContextRef {
     public func stroke(arc: Arc) {
         let radius = arc.size.width * 0.5
-        let rotation = DegreesToRadians(arc.rotation)
+        let rotation = degreesToRadians(arc.rotation)
         let sx: CGFloat = 1.0
         let sy: CGFloat = arc.size.height / arc.size.width
 
-        let transform = CGAffineTransform.identity.rotated(rotation).scaled(sx: sx,sy: sy)
-    
+        let transform = CGAffineTransform.identity.rotated(rotation).scaled(sx: sx, sy: sy)
+
         CGContextConcatCTM(self, transform)
 
 //        print("\(arc.startAngle), \(arc.endAngle)")
@@ -83,8 +83,7 @@ extension Arc {
 
 }
 
-public func computeArc(x0: CGFloat, y0: CGFloat, rx: CGFloat, ry: CGFloat, angle: CGFloat, largeArcFlag: Bool, sweepFlag: Bool, x: CGFloat, y: CGFloat) -> Arc
-{
+public func computeArc(x0: CGFloat, y0: CGFloat, rx: CGFloat, ry: CGFloat, angle: CGFloat, largeArcFlag: Bool, sweepFlag: Bool, x: CGFloat, y: CGFloat) -> Arc {
 
     //
     // Elliptical arc implementation based on the SVG specification notes
@@ -94,7 +93,7 @@ public func computeArc(x0: CGFloat, y0: CGFloat, rx: CGFloat, ry: CGFloat, angle
     let dx2 = (x0 - x) * 0.5
     let dy2 = (y0 - y) * 0.5
     // Convert angle from degrees to radians
-    let angle = DegreesToRadians(angle % 360)
+    let angle = degreesToRadians(angle % 360)
     let cosAngle = cos(angle)
     let sinAngle = sin(angle)
 
@@ -149,13 +148,13 @@ public func computeArc(x0: CGFloat, y0: CGFloat, rx: CGFloat, ry: CGFloat, angle
     var n = sqrt((ux * ux) + (uy * uy))
     var p = ux // (1 * ux) + (0 * uy)
     sign = (uy < 0) ? -1 : 1
-    var angleStart = RadiansToDegrees(sign * acos(p / n))
+    var angleStart = radiansToDegrees(sign * acos(p / n))
 
     // Compute the angle extent
     n = sqrt((ux * ux + uy * uy) * (vx * vx + vy * vy))
     p = ux * vx + uy * vy
     sign = (ux * vy - uy * vx < 0) ? -1 : 1
-    var angleExtent = RadiansToDegrees(sign * acos(p / n))
+    var angleExtent = radiansToDegrees(sign * acos(p / n))
     if !sweepFlag && angleExtent > 0 {
         angleExtent -= 360
     }
@@ -168,8 +167,8 @@ public func computeArc(x0: CGFloat, y0: CGFloat, rx: CGFloat, ry: CGFloat, angle
     var arc = Arc()
     arc.center = CGPoint(x: cx, y: cy)
     arc.size = CGSize(width: rx * 2, height: ry * 2)
-    arc.startAngle = DegreesToRadians(-angleStart)
-    arc.endAngle = DegreesToRadians(-angleExtent)
+    arc.startAngle = degreesToRadians(-angleStart)
+    arc.endAngle = degreesToRadians(-angleExtent)
     arc.rotation = angle
     return arc
 }

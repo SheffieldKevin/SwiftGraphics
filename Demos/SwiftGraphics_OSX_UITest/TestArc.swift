@@ -11,8 +11,8 @@ import CoreGraphics
 import SwiftGraphics
 import SwiftUtilities
 
-class ARCHandle : NSObject {
-    dynamic var position : CGPoint = CGPointZero {
+class ARCHandle: NSObject {
+    dynamic var position: CGPoint = CGPoint.zero {
         willSet {
             self.willChangeValueForKey("position_x")
             self.willChangeValueForKey("position_y")
@@ -22,41 +22,43 @@ class ARCHandle : NSObject {
             self.didChangeValueForKey("position_y")
             }
     }
-    
-    dynamic var position_x : CGFloat {
+
+    // swiftlint:disable variable_name
+    dynamic var position_x: CGFloat {
         get { return position.x }
         set { position.x = newValue }
     }
-    dynamic var position_y : CGFloat {
+    dynamic var position_y: CGFloat {
         get { return position.y }
         set { position.y = newValue }
     }
-    
+    // swiftlint:enable variable_name
+
     init(position: CGPoint) {
         super.init()
-        self.position = position;
+        self.position = position
     }
 }
 
-class TestArc : NSObject {
+class TestArc: NSObject {
     // TODO remove this
-    dynamic var handles : [ARCHandle] = [
+    dynamic var handles: [ARCHandle] = [
         ARCHandle(position: CGPoint(x: 100, y: 100)),
         ARCHandle(position: CGPoint(x: 200, y: 200)),
         ]
-    
-    dynamic var start : CGPoint { return handles[0].position }
-    dynamic var end : CGPoint { return handles[1].position }
-        
-    dynamic var angle : CGFloat = 0.0
-    dynamic var rx : CGFloat = 50.0
-    dynamic var ry : CGFloat = 50.0
-    dynamic var largeArc : Bool = false
-    dynamic var sweep : Bool = false
-    
-    var radius : CGFloat { return max(rx, ry) }
-    
-    var center : CGPoint {
+
+    dynamic var start: CGPoint { return handles[0].position }
+    dynamic var end: CGPoint { return handles[1].position }
+
+    dynamic var angle: CGFloat = 0.0
+    dynamic var rx: CGFloat = 50.0
+    dynamic var ry: CGFloat = 50.0
+    dynamic var largeArc: Bool = false
+    dynamic var sweep: Bool = false
+
+    var radius: CGFloat { return max(rx, ry) }
+
+    var center: CGPoint {
         let midPoint = (start + end) / 2
         let a = (midPoint - start).magnitude
         let c = radius

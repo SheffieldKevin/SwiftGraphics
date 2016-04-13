@@ -1,3 +1,7 @@
 [submodule "Externals/SwiftUtilities"]
 	path = Externals/SwiftUtilities
 	url = https://github.com/SheffieldKevin/SwiftUtilities.git
+[submodule "Externals/SwiftRandom"]
+	path = Externals/SwiftRandom
+	url = https://github.com/schwa/SwiftRandom.git
+

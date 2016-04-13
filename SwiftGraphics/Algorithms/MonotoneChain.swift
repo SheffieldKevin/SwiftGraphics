@@ -18,7 +18,9 @@ public extension CGPoint {
 }
 
 // https: //en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain
-public func monotoneChain(var points: [CGPoint], sorted: Bool = false) -> [CGPoint] {
+public func monotoneChain(points: [CGPoint], sorted: Bool = false) -> [CGPoint] {
+
+    var points = points
 
     if points.count <= 3 {
         return points
@@ -29,20 +31,21 @@ public func monotoneChain(var points: [CGPoint], sorted: Bool = false) -> [CGPoi
     }
 
     var lower: [CGPoint] = []
-    for var i = 0; i < points.count; i++ {
+    for i in 0..<points.count {
         while lower.count >= 2 && Turn(lower[lower.count - 2], lower[lower.count - 1], points[i])! != .Right {
             lower.removeLast()
         }
         lower.append(points[i])
     }
-       
+
     var upper: [CGPoint] = []
-    for var i = points.count - 1; i >= 0; i-- {
+
+    for i in (points.count - 1).stride(through: 0, by: -1) {
         while upper.count >= 2 && Turn(upper[upper.count - 2], upper[upper.count - 1], points[i])! != .Right {
             upper.removeLast()
             }
-        upper.append(points[i]);
-    }   
+        upper.append(points[i])
+    }
 
     lower.removeLast()
     upper.removeLast()
@@ -53,4 +56,3 @@ public func monotoneChain(var points: [CGPoint], sorted: Bool = false) -> [CGPoi
 
     return hull
 }
-

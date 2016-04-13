@@ -11,13 +11,13 @@ import SwiftGraphics
 
 class SelectionMarquee {
     enum Mode {
-        case rectangular
-        case polygonal
+        case Rectangular
+        case Polygonal
     }
     enum Value {
-        case empty
-        case rect(CGRect)
-        case polygon(SwiftGraphics.Polygon)
+        case Empty
+        case Rect(CGRect)
+        case Polygon(SwiftGraphics.Polygon)
 
         var polygon: SwiftGraphics.Polygon? {
             switch self {
@@ -29,8 +29,8 @@ class SelectionMarquee {
         }
     }
 
-    var mode = Mode.polygonal
-    var value = Value.empty
+    var mode = Mode.Polygonal
+    var value = Value.Empty
 
     var layer: CAShapeLayer
 

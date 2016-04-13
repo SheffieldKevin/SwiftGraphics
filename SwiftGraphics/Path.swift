@@ -9,42 +9,42 @@
 import CoreGraphics
 
 public enum PathElement {
-    case move(CGPoint)
-    case addLine(CGPoint)
-    case addCurve(BezierCurve)
-    case close
+    case Move(CGPoint)
+    case AddLine(CGPoint)
+    case AddCurve(BezierCurve)
+    case Close
 }
 
 
 public struct Path {
 
     public var elements: [PathElement] = []
-    
-    public var currentPoint: CGPoint = CGPointZero
+
+    public var currentPoint: CGPoint = CGPoint.zero
 
     public init() {
     }
 
     public mutating func move(point: CGPoint) -> Path {
         currentPoint = point
-        elements.append(.move(point))
+        elements.append(.Move(point))
         return self
     }
-    
+
     public mutating func addLine(point: CGPoint) -> Path {
         currentPoint = point
-        elements.append(.addLine(point))
+        elements.append(.AddLine(point))
         return self
     }
 
     public mutating func addCurve(curve: BezierCurve) -> Path {
         currentPoint = curve.end
-        elements.append(.addCurve(curve))
+        elements.append(.AddCurve(curve))
         return self
     }
 
     public mutating func close() -> Path {
-        elements.append(.close)
+        elements.append(.Close)
         return self
     }
 }
@@ -70,14 +70,11 @@ public extension Path {
 
         for element in elements {
             switch element {
-                case .move(let point):
+                case .Move(let point):
                     CGPathMoveToPoint(CGPath, nil, point.x, point.y)
-                    break
-                case .addLine(let point):
+                case .AddLine(let point):
                     CGPathAddLineToPoint(CGPath, nil, point.x, point.y)
-                    break
-                case .addCurve(let curve):
-
+                case .AddCurve(let curve):
                     switch curve.order {
                         case .Cubic:
                             CGPathAddCurveToPoint(CGPath, nil,
@@ -94,11 +91,8 @@ public extension Path {
                             assertionFailure("Unsupport bezier curve order.")
                             break
                     }
-
-                    break
-                case .close():
+                case .Close():
                     CGPathCloseSubpath(CGPath)
-                    break
             }
         }
 

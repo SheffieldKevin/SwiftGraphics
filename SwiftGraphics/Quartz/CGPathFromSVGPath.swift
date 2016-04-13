@@ -19,8 +19,7 @@ import CoreGraphics
 
  :return: the new path.
  */
-public func CGPathFromSVGPath(d: String) -> CGMutablePath
-{
+public func CGPathFromSVGPath(d: String) -> CGMutablePath {
     let path = CGPathCreateMutable()
     CGPathFromSVGPath(path, d)
     return path

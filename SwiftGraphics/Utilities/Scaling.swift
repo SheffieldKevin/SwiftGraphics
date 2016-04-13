@@ -11,21 +11,21 @@ import CoreGraphics
 // MARK: Scaling and alignment.
 
 public enum Scaling {
-    case none
-    case proportionally
-    case toFit
+    case None
+    case Proportionally
+    case ToFit
 }
 
 public enum Alignment {
-    case center
-    case top
-    case topLeft
-    case topRight
-    case left
-    case bottom
-    case bottomLeft
-    case bottomRight
-    case right
+    case Center
+    case Top
+    case TopLeft
+    case TopRight
+    case Left
+    case Bottom
+    case BottomLeft
+    case BottomRight
+    case Right
 }
 
 public func scaleAndAlignRectToRect(source source: CGRect, destination: CGRect, scaling: Scaling, alignment: Alignment) -> CGRect {
@@ -33,10 +33,10 @@ public func scaleAndAlignRectToRect(source source: CGRect, destination: CGRect, 
     var theScaledImageSize = source.size
 
     switch scaling {
-        case .toFit:
+        case .ToFit:
             return destination
 
-        case .proportionally:
+        case .Proportionally:
             var theScaleFactor: CGFloat = 1
             if destination.size.width / source.size.width < destination.size.height / source.size.height {
                 theScaleFactor = destination.size.width / source.size.width
@@ -48,41 +48,40 @@ public func scaleAndAlignRectToRect(source source: CGRect, destination: CGRect, 
             theScaledImageSize.height *= theScaleFactor
 
             result.size = theScaledImageSize
-        case .none:
+        case .None:
             result.size.width = theScaledImageSize.width
             result.size.height = theScaledImageSize.height
     }
 
     switch alignment {
-        case .center:
+        case .Center:
             result.origin.x = destination.origin.x + (destination.size.width - theScaledImageSize.width) / 2
             result.origin.y = destination.origin.y + (destination.size.height - theScaledImageSize.height) / 2
-        case .top:
+        case .Top:
             result.origin.x = destination.origin.x + (destination.size.width - theScaledImageSize.width) / 2
             result.origin.y = destination.origin.y + destination.size.height - theScaledImageSize.height
-        case .topLeft:
+        case .TopLeft:
             result.origin.x = destination.origin.x
             result.origin.y = destination.origin.y + destination.size.height - theScaledImageSize.height
-        case .topRight:
+        case .TopRight:
             result.origin.x = destination.origin.x + destination.size.width - theScaledImageSize.width
             result.origin.y = destination.origin.y + destination.size.height - theScaledImageSize.height
-        case .left:
+        case .Left:
             result.origin.x = destination.origin.x
             result.origin.y = destination.origin.y + (destination.size.height - theScaledImageSize.height) / 2
-        case .bottom:
+        case .Bottom:
             result.origin.x = destination.origin.x + (destination.size.width - theScaledImageSize.width) / 2
             result.origin.y = destination.origin.y
-        case .bottomLeft:
+        case .BottomLeft:
             result.origin.x = destination.origin.x
             result.origin.y = destination.origin.y
-        case .bottomRight:
+        case .BottomRight:
             result.origin.x = destination.origin.x + destination.size.width - theScaledImageSize.width
             result.origin.y = destination.origin.y
-        case .right:
+        case .Right:
             result.origin.x = destination.origin.x + destination.size.width - theScaledImageSize.width
             result.origin.y = destination.origin.y + (destination.size.height - theScaledImageSize.height) / 2
     }
 
     return result
 }
-

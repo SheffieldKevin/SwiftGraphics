@@ -23,7 +23,7 @@ public class Filter {
     public func setValue(value: AnyObject?, forKey key: String) {
         filter.setValue(value, forKey: key)
     }
-    
+
 }
 
 public extension CGRect {

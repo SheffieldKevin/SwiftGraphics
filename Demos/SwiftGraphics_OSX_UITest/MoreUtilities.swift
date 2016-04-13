@@ -25,7 +25,7 @@ extension UInt32 {
         s.append(characters[Int(self >> 8 & 0x0F)])
         s.append(characters[Int(self >> 4 & 0x0F)])
         s.append(characters[Int(self & 0x0F)])
-        
+
         return s
     }
 
@@ -65,15 +65,15 @@ struct Bitmap {
 extension NSColor {
     convenience init(rgba: UInt32, bgra: Bool = true) {
         let (rs: UInt32, gs: UInt32, bs: UInt32) = bgra ? (8, 16, 24) : (24, 16, 8)
-    
-    
+
+
         let r = CGFloat((rgba >> rs) & 0xFF) / 255
         let g = CGFloat((rgba >> gs) & 0xFF) / 255
         let b = CGFloat((rgba >> bs) & 0xFF) / 255
         let a = CGFloat(rgba & 0b1111_1111) / 255
         self.init(deviceRed: r, green: g, blue: b, alpha: a)
     }
-    
+
     var asUInt32: UInt32 {
         get {
             let r = UInt32(redComponent * 255)
@@ -188,7 +188,7 @@ struct BlockBackedCollectionGenerator <T> : GeneratorType {
         self.count = sequence.count
         self.block = sequence.block
     }
-        
+
     mutating func next() -> Element? {
         if nextIndex >= endIndex {
             return nil

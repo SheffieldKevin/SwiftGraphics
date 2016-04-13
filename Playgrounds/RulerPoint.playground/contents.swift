@@ -26,4 +26,3 @@ let p6 = p4.rulerPoint(p5, dx: 20, dy: 20)
 context.strokeLine(p5, p6)
 
 context.nsimage
-

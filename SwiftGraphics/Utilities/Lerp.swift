@@ -13,7 +13,7 @@ public protocol Subtractable {
 }
 
 public protocol Lerpable {
-    typealias FactorType
+    associatedtype FactorType
 
     func + (lhs: Self, rhs: Self) -> Self
     func * (lhs: Self, rhs: FactorType) -> Self

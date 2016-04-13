@@ -33,7 +33,7 @@ class Handle: Marker, Equatable /*, Draggable */ {
 
 }
 
-func ==(lhs: Handle, rhs: Handle) -> Bool {
+func == (lhs: Handle, rhs: Handle) -> Bool {
 //    return lhs.position == rhs.position
     return lhs.position.x == rhs.position.x && lhs.position.y == rhs.position.y
     }
@@ -42,7 +42,7 @@ func ==(lhs: Handle, rhs: Handle) -> Bool {
 
 class HandleEditor {
     var handles: [Handle] = []
-    var drag : Drag
+    var drag: Drag
 
     init() {
         drag = Drag()
@@ -70,7 +70,7 @@ class HandleEditor {
             return
             }
     }
-    
+
     func addHandle(handle: Handle) {
         handles.append(handle)
     }
@@ -128,19 +128,19 @@ extension BoxObject : Interactive {
     internal func updateFromHandles(handles: [Handle], activeHandleIndex: Int) {
         switch activeHandleIndex {
             case 0:
-                self.frame = CGRect(p1: handles[0].position, p2: handles[2].position);
+                self.frame = CGRect(p1: handles[0].position, p2: handles[2].position)
                 handles[1].position = CGPoint(x: handles[0].position.x, y: handles[2].position.y)
                 handles[3].position = CGPoint(x: handles[2].position.x, y: handles[0].position.y)
             case 1:
-                self.frame = CGRect(p1: handles[1].position, p2: handles[3].position);
+                self.frame = CGRect(p1: handles[1].position, p2: handles[3].position)
                 handles[0].position = CGPoint(x: handles[1].position.x, y: handles[3].position.y)
                 handles[2].position = CGPoint(x: handles[3].position.x, y: handles[1].position.y)
             case 2:
-                self.frame = CGRect(p1: handles[2].position, p2: handles[0].position);
+                self.frame = CGRect(p1: handles[2].position, p2: handles[0].position)
                 handles[1].position = CGPoint(x: handles[0].position.x, y: handles[2].position.y)
                 handles[3].position = CGPoint(x: handles[2].position.x, y: handles[0].position.y)
             case 3:
-                self.frame = CGRect(p1: handles[3].position, p2: handles[1].position);
+                self.frame = CGRect(p1: handles[3].position, p2: handles[1].position)
                 handles[0].position = CGPoint(x: handles[1].position.x, y: handles[3].position.y)
                 handles[2].position = CGPoint(x: handles[3].position.x, y: handles[1].position.y)
             default:
@@ -186,7 +186,7 @@ extension LineSegmentObject : Drawable {
 
 class HandleEditorView: NSView, NSGestureRecognizerDelegate {
     var handleEditor = HandleEditor()
-    var intersection = Marker(position: CGPointZero)
+    var intersection = Marker(position: CGPoint.zero)
 
     var interactives: [Drawable] = []
 

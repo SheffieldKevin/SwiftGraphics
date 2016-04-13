@@ -1,20 +1,20 @@
 // Playground - noun: a place where people can play
 
-import Foundation
+// Order of imports is very important
+import CoreGraphics
+import SwiftUtilities
+import SwiftRandom
 import SwiftGraphics
 import SwiftGraphicsPlayground
 
 let points = [
-    CGPoint(x: 120,y: 160),
-    CGPoint(x: 35,y: 200),
-    CGPoint(x: 220,y: 260),
-    CGPoint(x: 220,y: 40),
+    CGPoint(x: 120, y: 160), CGPoint(x: 35, y: 200), CGPoint(x: 220, y: 260), CGPoint(x: 220, y: 40),
 ]
 
 let curve = BezierCurve(points: points)
 let (leftCurve, rightCurve) = curve.split(0.85)
 
-let cgimage = CGContextRef.imageWithBlock(CGSize(w: 250, h: 250), color: CGColor.lightGrayColor(), origin: CGPointZero) {
+let cgimage = CGContextRef.imageWithBlock(CGSize(w: 250, h: 250), color: CGColor.lightGrayColor(), origin: CGPoint.zero) {
     (context: CGContext) -> Void in
 
     // Draw the whole bezier curve in green
@@ -41,5 +41,5 @@ let cgimage = CGContextRef.imageWithBlock(CGSize(w: 250, h: 250), color: CGColor
     context.plotPoints(newPoints)
 }
 
-let image = NSImage(CGImage: cgimage, size: cgimage.size)  
+let image = NSImage(CGImage: cgimage, size: cgimage.size)
 image

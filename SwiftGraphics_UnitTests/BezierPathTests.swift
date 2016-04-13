@@ -15,10 +15,7 @@ class BezierPathTests: XCTestCase {
     func testExample() {
 
         let points = [
-            CGPoint(x: 120,y: 160),
-            CGPoint(x: 35,y: 200),
-            CGPoint(x: 220,y: 260),
-            CGPoint(x: 220,y: 40),
+            CGPoint(x: 120, y: 160), CGPoint(x: 35, y: 200), CGPoint(x: 220, y: 260), CGPoint(x: 220, y: 40),
         ]
 
         let curve = BezierCurve(points: points)
@@ -30,10 +27,7 @@ class BezierPathTests: XCTestCase {
 
     func testPointAlongCurveDeCasteljaus() {
         let points = [
-            CGPoint(x: 120,y: 160),
-            CGPoint(x: 35,y: 200),
-            CGPoint(x: 220,y: 260),
-            CGPoint(x: 220,y: 40),
+            CGPoint(x: 120, y: 160), CGPoint(x: 35, y: 200), CGPoint(x: 220, y: 260), CGPoint(x: 220, y: 40),
         ]
         self.measureBlock() {
             for var t: CGFloat = 0.0; t <= 1.0; t += 0.01 {
@@ -44,10 +38,7 @@ class BezierPathTests: XCTestCase {
 
     func testPointAlongCurveMatrix() {
         let points = [
-            CGPoint(x: 120,y: 160),
-            CGPoint(x: 35,y: 200),
-            CGPoint(x: 220,y: 260),
-            CGPoint(x: 220,y: 40),
+            CGPoint(x: 120, y: 160), CGPoint(x: 35, y: 200), CGPoint(x: 220, y: 260), CGPoint(x: 220, y: 40),
         ]
         self.measureBlock() {
             for var t: CGFloat = 0.0; t <= 1.0; t += 0.01 {

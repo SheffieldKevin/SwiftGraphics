@@ -5,7 +5,7 @@ import Cocoa
 import SwiftGraphics
 import SwiftGraphicsPlayground
 
-public typealias BitmapContextParameters = (width: UInt,height: UInt,bitsPerComponent: UInt,bytesPerRow: UInt,colorSpace: CGColorSpace,bitmapInfo: CGBitmapInfo)
+public typealias BitmapContextParameters = (width: UInt, height: UInt, bitsPerComponent: UInt, bytesPerRow: UInt, colorSpace: CGColorSpace, bitmapInfo: CGBitmapInfo)
 
 enum BitmapContextMode {
     case RGBA_UINT8
@@ -30,8 +30,7 @@ public func expandBitmapContextParameters(size: CGSize, bitsPerComponent: Int, c
         }
     }()
 
-    if (bitmapInfo.rawValue & CGBitmapInfo.FloatComponents.rawValue != 0)
-        {
+    if (bitmapInfo.rawValue & CGBitmapInfo.FloatComponents.rawValue != 0) {
         if bitsPerComponent != sizeof(Float) * 8 {
             return nil
         }
@@ -93,13 +92,3 @@ data[3]
 
 
 context.nsimage
-
-
-
-
-
-
-
-
-
-

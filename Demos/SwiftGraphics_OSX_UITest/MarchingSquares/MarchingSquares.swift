@@ -25,13 +25,13 @@ class MarchingSquares {
         self.size = size
         self.resolution = resolution
     }
-    
+
     func render(ctx: CGContext) {
         // Yup!
-  
+
         ctx.strokeLines(points)
     }
-    
+
     func drawMagnitudeGrid(ctx: CGContext) {
         if magnitudeGrid == nil {
             return
@@ -39,19 +39,19 @@ class MarchingSquares {
         for X in 0..<size.width {
             for Y in 0..<size.height {
                 let point = CGPoint(x: CGFloat(X), y: CGFloat(Y)) * resolution
-                let magnitude = magnitudeGrid[IntPoint(x: X,y: Y)]
+                let magnitude = magnitudeGrid[IntPoint(x: X, y: Y)]
                 if magnitude < 0.2 {
                     continue
                 }
-                
+
                 let hue: CGFloat = magnitude >= threshold ? 1.0 : 0.8
-                
+
                 ctx.fillColor = CGColor.color(hue: hue, saturation: 1.0, brightness: 1.0, alpha: magnitude)
                 ctx.fillCircle(center: point, radius: 1.5)
             }
         }
     }
-    
+
     func magnitudeForPoint(point: CGPoint) -> CGFloat {
         if point.x != floor(point.x) || point.y != floor(point.y) {
             return magnitudeClosure(point: point)
@@ -59,30 +59,30 @@ class MarchingSquares {
         else {
             let x = Int(point.x / resolution)
             let y = Int(point.y / resolution)
-            return magnitudeGrid[IntPoint(x: x,y: y)]
+            return magnitudeGrid[IntPoint(x: x, y: y)]
         }
     }
-    
+
     func magnitudeForCell(cell: IntPoint) -> CGFloat {
         return magnitudeGrid[cell]
     }
 
     func update() {
-    
+
         magnitudeGrid = Grid_Buffer <CGFloat>(width: size.width, height: size.height, defaultValue: 0.0)
         for X in 0..<size.width {
             for Y in 0..<size.height {
                 let point = CGPoint(x: CGFloat(X), y: CGFloat(Y)) * resolution
-                magnitudeGrid[IntPoint(x: X,y: Y)] = magnitudeClosure(point: point)
+                magnitudeGrid[IntPoint(x: X, y: Y)] = magnitudeClosure(point: point)
             }
         }
-    
+
         points = []
 
         let cellSize = CGSize(width: resolution, height: resolution)
-        
+
         var edges: [Edge] = []
-        
+
         for X in 0..<(size.width - 1) {
             for Y in 0..<(size.height - 1) {
                 let offset = CGPoint(x: CGFloat(X), y: CGFloat(Y)) * resolution
@@ -95,7 +95,7 @@ class MarchingSquares {
 
 //                let CENTRUM = Int(magnitudeForPoint[(X + 0.5, Y + 0.5)] >= filter)
 
-                let pointsCell = pointsForCell((X,Y), size: cellSize)
+                let pointsCell = pointsForCell((X, Y), size: cellSize)
                 switch pointsCell {
                     case .None:
                         NOP()
@@ -113,7 +113,7 @@ class MarchingSquares {
                 }
             }
         }
-        
+
 //        Polygon.constructPolygonsFromUnconnectedEdges(edges)
     }
 
@@ -129,7 +129,7 @@ class MarchingSquares {
             return magnitude >= threshold ? .One : .Zero
         }
 
-        let (X,Y) = cell
+        let (X, Y) = cell
         let A = clamp(magnitudeForCell(IntPoint(x: X, y: Y)), lower: 0, upper: 1)
         let B = clamp(magnitudeForCell(IntPoint(x: X + 1, y: Y)), lower: 0, upper: 1)
         let C = clamp(magnitudeForCell(IntPoint(x: X + 1, y: Y + 1)), lower: 0, upper: 1)
@@ -138,7 +138,7 @@ class MarchingSquares {
         let (MINX, MIDX, MAXX) = (0.0 * size.width, 0.5 * size.width, 1.0 * size.width)
         let (MINY, MIDY, MAXY) = (1.0 * size.height, 0.5 * size.height, 0.0 * size.height)
 
-        let (a,b,c,d) = (filter(A), filter(B), filter(C), filter(D))
+        let (a, b, c, d) = (filter(A), filter(B), filter(C), filter(D))
 
         func ab() -> CGPoint { return CGPoint(x: MIDX, y: MAXY) }
         func bc() -> CGPoint { return CGPoint(x: MAXX, y: MIDY) }
@@ -150,7 +150,7 @@ class MarchingSquares {
 //        func cd() -> CGPoint { return CGPoint(x: MINX, y: lerp(1, 0, (C + D) * 0.5) * size.height) }
 //        func da() -> CGPoint { return CGPoint(x: lerp(0, 1, (D + A) * 0.5) * size.width, y: MINY) }
 
-        switch (a,b,c,d) {
+        switch (a, b, c, d) {
             case (.Zero, .Zero, .Zero, .Zero): // 0
                 return .None
             case (.Zero, .Zero, .Zero, .One): // 1

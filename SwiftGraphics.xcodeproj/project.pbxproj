@@ -6,44 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		4563D30E1B90AD3B005412D1 /* All iOS */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 4563D3131B90AD3B005412D1 /* Build configuration list for PBXAggregateTarget "All iOS" */;
-			buildPhases = (
-			);
-			dependencies = (
-				4563D3151B90AD4D005412D1 /* PBXTargetDependency */,
-			);
-			name = "All iOS";
-			productName = "All iOS";
-		};
-		4563D3161B90AD56005412D1 /* All Mac */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 4563D3171B90AD56005412D1 /* Build configuration list for PBXAggregateTarget "All Mac" */;
-			buildPhases = (
-			);
-			dependencies = (
-				4563D31B1B90AD61005412D1 /* PBXTargetDependency */,
-				4563D31D1B90AD61005412D1 /* PBXTargetDependency */,
-			);
-			name = "All Mac";
-			productName = "All Mac";
-		};
-		45B8AE8F19BCE56E00C61A3F /* All */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 45B8AE9019BCE56E00C61A3F /* Build configuration list for PBXAggregateTarget "All" */;
-			buildPhases = (
-			);
-			dependencies = (
-				4563D31F1B90AD6A005412D1 /* PBXTargetDependency */,
-				4563D3211B90AD6A005412D1 /* PBXTargetDependency */,
-			);
-			name = All;
-			productName = All;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		026F21041A5FB23E00A52D0E /* Fuzzy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B0D5619CA9E7F00044B7C /* Fuzzy.swift */; };
 		026F21051A5FB25800A52D0E /* CoordinateSystems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456877E119B6857B004BEFD6 /* CoordinateSystems.swift */; };
@@ -119,9 +81,15 @@
 		45589CA81B653A6A007B5ED4 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45589CA51B653A6A007B5ED4 /* Filters.swift */; };
 		4563EFD91A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
 		4563EFDA1A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
+		45646BBF1C55DAC90042E2C0 /* SwiftGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454D550719AA5CE6000E3EB3 /* SwiftGraphics.framework */; };
+		4567D44C1B800E3900BED1CC /* SwiftUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452034A21B2B8518002CCCFA /* SwiftUtilities.framework */; };
 		456877E219B6857B004BEFD6 /* CoordinateSystems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456877E119B6857B004BEFD6 /* CoordinateSystems.swift */; };
 		456C315C19C65B0E003AA1DF /* Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456C315B19C65B0E003AA1DF /* Ellipse.swift */; };
 		456C315D19C65B0E003AA1DF /* Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456C315B19C65B0E003AA1DF /* Ellipse.swift */; };
+		457309E51C2DFB8E000D8A1C /* DebugDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457309E41C2DFB8E000D8A1C /* DebugDrawable.swift */; };
+		457309E61C2DFB8E000D8A1C /* DebugDrawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457309E41C2DFB8E000D8A1C /* DebugDrawable.swift */; };
+		457309EE1C2FB7DE000D8A1C /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457309ED1C2FB7DE000D8A1C /* Arc.swift */; };
+		457309EF1C2FB7DE000D8A1C /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457309ED1C2FB7DE000D8A1C /* Arc.swift */; };
 		4574C0251A64604900454DE5 /* CGContext_OSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4574C0241A64604900454DE5 /* CGContext_OSX.swift */; };
 		4574C0271A64613A00454DE5 /* CGContext+BitmapContexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4574C0261A64613A00454DE5 /* CGContext+BitmapContexts.swift */; };
 		4574C0281A64613A00454DE5 /* CGContext+BitmapContexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4574C0261A64613A00454DE5 /* CGContext+BitmapContexts.swift */; };
@@ -171,6 +139,7 @@
 		45B8AE8E19BCE4ED00C61A3F /* CColorConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45563F2D19B1047E003B1639 /* CColorConverter.m */; };
 		45BA25B819CA112E00B612B7 /* MonotoneChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA25B719CA112E00B612B7 /* MonotoneChain.swift */; };
 		45BA25BD19CA1E8A00B612B7 /* ConvexHullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA25BC19CA1E8A00B612B7 /* ConvexHullTests.swift */; };
+		45BB42551CA0E55C00475878 /* SwiftRandom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BB42501CA0E51800475878 /* SwiftRandom.framework */; };
 		45C11B5B1A69751B0029A61C /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C11B5A1A69751B0029A61C /* Triangle.swift */; };
 		45C4C35C1A7DA8EF0036EE2B /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4C35B1A7DA8EF0036EE2B /* ProjectTests.swift */; };
 		45C6DC751A13E59C004C4693 /* TransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6DC741A13E59C004C4693 /* TransformTests.swift */; };
@@ -193,6 +162,8 @@
 		45E38D2D1A74242E00EC672A /* Ellipse+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E38D281A74242E00EC672A /* Ellipse+Markup.swift */; };
 		45E38D2E1A74242E00EC672A /* Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E38D291A74242E00EC672A /* Markup.swift */; };
 		45E38D2F1A74242E00EC672A /* Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E38D291A74242E00EC672A /* Markup.swift */; };
+		45EBB7911CA6283200B6C442 /* LineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EBB7901CA6283200B6C442 /* LineSegment.swift */; };
+		45EBB7921CA6283200B6C442 /* LineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EBB7901CA6283200B6C442 /* LineSegment.swift */; };
 		45F32C721A6455BB00E3DA68 /* CGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F32C711A6455BB00E3DA68 /* CGColor.swift */; };
 		45F32C731A6455BB00E3DA68 /* CGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F32C711A6455BB00E3DA68 /* CGColor.swift */; };
 		45F32C751A64590E00E3DA68 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F32C741A64590E00E3DA68 /* Color.swift */; };
@@ -221,47 +192,33 @@
 			remoteGlobalIDString = 454D550619AA5CE6000E3EB3;
 			remoteInfo = SwiftGraphics_OSX;
 		};
-		4563D3141B90AD4D005412D1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45DA4AC319AA62A800133F32;
-			remoteInfo = SwiftGraphics_iOS;
-		};
-		4563D31A1B90AD61005412D1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 454D550619AA5CE6000E3EB3;
-			remoteInfo = SwiftGraphics_OSX;
-		};
-		4563D31C1B90AD61005412D1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 454FE66119C77031002E4DEF;
-			remoteInfo = SwiftGraphics_OSX_Playground;
-		};
-		4563D31E1B90AD6A005412D1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4563D3161B90AD56005412D1;
-			remoteInfo = "All Mac";
-		};
-		4563D3201B90AD6A005412D1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4563D30E1B90AD3B005412D1;
-			remoteInfo = "All iOS";
-		};
 		4582DB7819AA7A6700B7F5B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 454D550619AA5CE6000E3EB3;
 			remoteInfo = SwiftGraphics_OSX;
+		};
+		45BB424D1CA0E51800475878 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45BB42481CA0E51800475878 /* SwiftRandom.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45E4F3661C641B09005B0938;
+			remoteInfo = SwiftRandom_iOS;
+		};
+		45BB424F1CA0E51800475878 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45BB42481CA0E51800475878 /* SwiftRandom.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45E4F3501C641722005B0938;
+			remoteInfo = SwiftRandom_OSX;
+		};
+		45BB42531CA0E55100475878 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45BB42481CA0E51800475878 /* SwiftRandom.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45E4F34F1C641722005B0938;
+			remoteInfo = SwiftRandom_OSX;
 		};
 		6EF8084F1BE791AD005F0975 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -313,9 +270,11 @@
 		451908931A8A8131006894B4 /* GeometryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryExtensions.swift; sourceTree = "<group>"; };
 		451CE9F31A61D73B006F721B /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ScratchPad.playground; sourceTree = "<group>"; };
 		451CE9F41A61D73C006F721B /* SwiftGraphicsTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftGraphicsTest.playground; sourceTree = "<group>"; };
+		451D1A861C588CF500CB9358 /* Interactive.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Interactive.playground; sourceTree = "<group>"; };
 		451D29091A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGraphics_iOS_UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftUtilities.xcodeproj; path = ../../../SwiftUtilities/SwiftUtilities.xcodeproj; sourceTree = "<group>"; };
 		452034B11B2B889A002CCCFA /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		452129871BEC500900A00DD9 /* Points.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Points.playground; sourceTree = "<group>"; };
 		4535BD5F1AB260F3005A04A5 /* BezierCurve+Transforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BezierCurve+Transforms.swift"; sourceTree = "<group>"; };
 		4537990419AA671E004DF99E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4537990519AA671E004DF99E /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
@@ -350,6 +309,11 @@
 		456877E119B6857B004BEFD6 /* CoordinateSystems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinateSystems.swift; sourceTree = "<group>"; };
 		456C315B19C65B0E003AA1DF /* Ellipse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ellipse.swift; sourceTree = "<group>"; };
 		4570B83C1A1EC3770055847A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		457309E11C2C9C44000D8A1C /* Arc.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Arc.playground; sourceTree = "<group>"; };
+		457309E41C2DFB8E000D8A1C /* DebugDrawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugDrawable.swift; sourceTree = "<group>"; };
+		457309E71C2E0065000D8A1C /* NativePath.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = NativePath.playground; sourceTree = "<group>"; };
+		457309EA1C2F3512000D8A1C /* Circle.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Circle.playground; sourceTree = "<group>"; };
+		457309ED1C2FB7DE000D8A1C /* Arc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
 		4574C0241A64604900454DE5 /* CGContext_OSX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGContext_OSX.swift; sourceTree = "<group>"; };
 		4574C0261A64613A00454DE5 /* CGContext+BitmapContexts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+BitmapContexts.swift"; sourceTree = "<group>"; };
 		457B6E751ABE07D6007083C0 /* Squircle.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Squircle.playground; sourceTree = "<group>"; };
@@ -358,6 +322,7 @@
 		457E54501A68D35B0059B357 /* Turn.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Turn.playground; sourceTree = "<group>"; };
 		457E72861A72EA6E00E5A7A1 /* RegularPolygon.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RegularPolygon.playground; sourceTree = "<group>"; };
 		457F99AE1B62ED77007CC480 /* CoreJSONImage.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CoreJSONImage.playground; sourceTree = "<group>"; };
+		458610541BF5210F00F407B7 /* PatternTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PatternTest.playground; sourceTree = "<group>"; };
 		458A6D391A8455D900DEFBFA /* CGPoint+Trigonometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Trigonometry.swift"; sourceTree = "<group>"; };
 		458BDD8119BCF7D100CD0EAC /* QuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadTree.swift; sourceTree = "<group>"; };
 		458C59071A7410A500E993A6 /* GeometryProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryProtocols.swift; sourceTree = "<group>"; };
@@ -384,6 +349,7 @@
 		45BA25B719CA112E00B612B7 /* MonotoneChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonotoneChain.swift; sourceTree = "<group>"; };
 		45BA25BB19CA156800B612B7 /* Triangle.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Triangle.playground; sourceTree = "<group>"; };
 		45BA25BC19CA1E8A00B612B7 /* ConvexHullTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvexHullTests.swift; sourceTree = "<group>"; };
+		45BB42481CA0E51800475878 /* SwiftRandom.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SwiftRandom.xcodeproj; sourceTree = "<group>"; };
 		45BF1EBF1A61FED300DE8AE5 /* Random.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Random.playground; sourceTree = "<group>"; };
 		45BF4CAC1A69929C00F260B0 /* Ellipse.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Ellipse.playground; sourceTree = "<group>"; };
 		45C11B5A1A69751B0029A61C /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
@@ -395,6 +361,7 @@
 		45DA4AC419AA62A800133F32 /* SwiftGraphics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftGraphics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DA4AC719AA62A800133F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45DA4AC819AA62A800133F32 /* SwiftGraphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftGraphics.h; sourceTree = "<group>"; };
+		45DB6C2D1CA4F2BF008F19CC /* Mission.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Mission.playground; sourceTree = "<group>"; };
 		45E298721A69B2DC006FE740 /* BezierCurveChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierCurveChain.swift; sourceTree = "<group>"; };
 		45E38D1E1A74235800EC672A /* Drawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
 		45E38D1F1A74235800EC672A /* Geometry+Drawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Geometry+Drawable.swift"; sourceTree = "<group>"; };
@@ -402,7 +369,9 @@
 		45E38D271A74242E00EC672A /* BezierPath+Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BezierPath+Markup.swift"; sourceTree = "<group>"; };
 		45E38D281A74242E00EC672A /* Ellipse+Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ellipse+Markup.swift"; sourceTree = "<group>"; };
 		45E38D291A74242E00EC672A /* Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markup.swift; sourceTree = "<group>"; };
+		45EBB7901CA6283200B6C442 /* LineSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineSegment.swift; sourceTree = "<group>"; };
 		45ECEC301A6561D60018F7C6 /* BezierPath.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BezierPath.playground; sourceTree = "<group>"; };
+		45EFDCBE1C528F27005FE15B /* Spiral.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Spiral.playground; sourceTree = "<group>"; };
 		45F32C711A6455BB00E3DA68 /* CGColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGColor.swift; sourceTree = "<group>"; };
 		45F32C741A64590E00E3DA68 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		45FA46501A7F3DBB000473B5 /* Rectangle+Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rectangle+Markup.swift"; sourceTree = "<group>"; };
@@ -425,7 +394,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EFD360C1BE2748700571C44 /* SwiftUtilities.framework in Frameworks */,
+				45BB42551CA0E55C00475878 /* SwiftRandom.framework in Frameworks */,
+				452034AA1B2B8538002CCCFA /* SwiftUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +403,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45646BBF1C55DAC90042E2C0 /* SwiftGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				4520347D1B2B8518002CCCFA /* SwiftUtilities */,
+				45BB42391CA0E51800475878 /* SwiftRandom */,
 			);
 			path = Externals;
 			sourceTree = "<group>";
@@ -496,6 +468,16 @@
 				4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */,
 			);
 			path = SwiftUtilities;
+			sourceTree = "<group>";
+		};
+		4520349B1B2B8518002CCCFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				452034A41B2B8518002CCCFA /* SwiftUtilities.framework */,
+				452034A21B2B8518002CCCFA /* SwiftUtilities.framework */,
+				452034A61B2B8518002CCCFA /* SwiftUtilities_OSX_Tests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		4535BD5E1AB260B0005A04A5 /* BezierCurve */ = {
@@ -594,6 +576,7 @@
 		454FE65B19C77001002E4DEF /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				451D1A861C588CF500CB9358 /* Interactive.playground */,
 				454FE65C19C7700E002E4DEF /* ConvexHull.playground */,
 				457DEBD41A649689003E4363 /* Path.playground */,
 				45ECEC301A6561D60018F7C6 /* BezierPath.playground */,
@@ -602,9 +585,16 @@
 				45BA25BB19CA156800B612B7 /* Triangle.playground */,
 				457C74A01A7C3B01004F3DBF /* BezierPathSplitting.playground */,
 				45589CAA1B653B80007B5ED4 /* SimpleFilters.playground */,
+				457309E11C2C9C44000D8A1C /* Arc.playground */,
 				45E38D311A7424F600EC672A /* Broken or Limited Usefulness */,
 				45E38D321A74254000EC672A /* Very WIP */,
 				4590E8611B5E1775004EC402 /* Experimental */,
+				452129871BEC500900A00DD9 /* Points.playground */,
+				458610541BF5210F00F407B7 /* PatternTest.playground */,
+				457309E71C2E0065000D8A1C /* NativePath.playground */,
+				457309EA1C2F3512000D8A1C /* Circle.playground */,
+				45EFDCBE1C528F27005FE15B /* Spiral.playground */,
+				45DB6C2D1CA4F2BF008F19CC /* Mission.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
@@ -719,6 +709,7 @@
 				458C59031A740A7D00E993A6 /* Utilities */,
 				458C59041A740ABE00E993A6 /* Algorithms */,
 				4594B09119AEE31E00101EB4 /* Path.swift */,
+				457309E41C2DFB8E000D8A1C /* DebugDrawable.swift */,
 				45066CF81A7428BA00F561E1 /* Drawable */,
 				45E38D201A74235800EC672A /* Style.swift */,
 				02AAA8EC1A7A16A5001898E2 /* Gradient.swift */,
@@ -728,6 +719,23 @@
 				45E38D301A74249000EC672A /* Markup */,
 			);
 			path = SwiftGraphics;
+			sourceTree = "<group>";
+		};
+		45BB42391CA0E51800475878 /* SwiftRandom */ = {
+			isa = PBXGroup;
+			children = (
+				45BB42481CA0E51800475878 /* SwiftRandom.xcodeproj */,
+			);
+			path = SwiftRandom;
+			sourceTree = "<group>";
+		};
+		45BB42491CA0E51800475878 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45BB424E1CA0E51800475878 /* SwiftRandom.framework */,
+				45BB42501CA0E51800475878 /* SwiftRandom.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		45DA4AC519AA62A800133F32 /* SwiftGraphics_iOS */ = {
@@ -753,10 +761,12 @@
 				458C59071A7410A500E993A6 /* GeometryProtocols.swift */,
 				459EE5E319AEC5130012E023 /* BasicGeometry.swift */,
 				45066CF91A74347300F561E1 /* Lines.swift */,
+				45EBB7901CA6283200B6C442 /* LineSegment.swift */,
 				459A4C4B1A69913600E87608 /* Circle.swift */,
 				456C315B19C65B0E003AA1DF /* Ellipse.swift */,
 				02C9D0111A71D12F00B9696E /* RegularPolygon.swift */,
 				45C11B5A1A69751B0029A61C /* Triangle.swift */,
+				457309ED1C2FB7DE000D8A1C /* Arc.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -894,10 +904,13 @@
 				454D550319AA5CE6000E3EB3 /* Frameworks */,
 				454D550419AA5CE6000E3EB3 /* Headers */,
 				454D550519AA5CE6000E3EB3 /* Resources */,
+				455B23A01C560A0100D19F7F /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				45BB42541CA0E55100475878 /* PBXTargetDependency */,
+				452034A81B2B852A002CCCFA /* PBXTargetDependency */,
 			);
 			name = SwiftGraphics_OSX;
 			productName = SwiftGraphics;
@@ -981,15 +994,6 @@
 					454FE66119C77031002E4DEF = {
 						CreatedOnToolsVersion = 6.1;
 					};
-					4563D30E1B90AD3B005412D1 = {
-						CreatedOnToolsVersion = 7.0;
-					};
-					4563D3161B90AD56005412D1 = {
-						CreatedOnToolsVersion = 7.0;
-					};
-					45B8AE8F19BCE56E00C61A3F = {
-						CreatedOnToolsVersion = 6.0;
-					};
 					45DA4AC319AA62A800133F32 = {
 						CreatedOnToolsVersion = 6.0;
 					};
@@ -1008,15 +1012,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 6EF808491BE791AD005F0975 /* Products */;
+					ProductGroup = 45BB42491CA0E51800475878 /* Products */;
+					ProjectRef = 45BB42481CA0E51800475878 /* SwiftRandom.xcodeproj */;
+				},
+				{
+					ProductGroup = 4520349B1B2B8518002CCCFA /* Products */;
 					ProjectRef = 4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				45B8AE8F19BCE56E00C61A3F /* All */,
-				4563D3161B90AD56005412D1 /* All Mac */,
-				4563D30E1B90AD3B005412D1 /* All iOS */,
 				454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */,
 				45DA4AC319AA62A800133F32 /* SwiftGraphics_iOS */,
 				454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */,
@@ -1041,11 +1046,25 @@
 			remoteRef = 6EF808511BE791AD005F0975 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6EF808541BE791AD005F0975 /* SwiftUtilities_OSX_Tests.xctest */ = {
+		452034A61B2B8518002CCCFA /* SwiftUtilities_OSX_Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = SwiftUtilities_OSX_Tests.xctest;
-			remoteRef = 6EF808531BE791AD005F0975 /* PBXContainerItemProxy */;
+			remoteRef = 452034A51B2B8518002CCCFA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45BB424E1CA0E51800475878 /* SwiftRandom.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftRandom.framework;
+			remoteRef = 45BB424D1CA0E51800475878 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45BB42501CA0E51800475878 /* SwiftRandom.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftRandom.framework;
+			remoteRef = 45BB424F1CA0E51800475878 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1088,6 +1107,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		455B23A01C560A0100D19F7F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		451D29051A8A911F00209FE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1117,6 +1153,7 @@
 				45066CFD1A74349500F561E1 /* Lines+Drawing.swift in Sources */,
 				45A14E1C1A69D582006F4949 /* GenericGeometryTypes.swift in Sources */,
 				451835E21A73072E006B123B /* Lerp.swift in Sources */,
+				45EBB7911CA6283200B6C442 /* LineSegment.swift in Sources */,
 				029651AC1A6366FA0099DA1C /* CDisplayLink.m in Sources */,
 				45FA46541A7F3EA9000473B5 /* Circle+Markup.swift in Sources */,
 				451908951A8A8131006894B4 /* GeometryExtensions.swift in Sources */,
@@ -1159,12 +1196,14 @@
 				458C590E1A74136000E993A6 /* Insidedness.swift in Sources */,
 				459EE5ED19AEC5130012E023 /* CGPath.swift in Sources */,
 				45E38D251A74235800EC672A /* Style.swift in Sources */,
+				457309EE1C2FB7DE000D8A1C /* Arc.swift in Sources */,
 				02DABB641A8F110F000C8D9F /* CGPathFromSVGPath.m in Sources */,
 				456877E219B6857B004BEFD6 /* CoordinateSystems.swift in Sources */,
 				45E38D2E1A74242E00EC672A /* Markup.swift in Sources */,
 				45F32C721A6455BB00E3DA68 /* CGColor.swift in Sources */,
 				459EE5F519AEC5130012E023 /* BasicGeometry.swift in Sources */,
 				45066CFA1A74347300F561E1 /* Lines.swift in Sources */,
+				457309E51C2DFB8E000D8A1C /* DebugDrawable.swift in Sources */,
 				459EE5EF19AEC5130012E023 /* CGPoint.swift in Sources */,
 				458A6D3A1A8455D900DEFBFA /* CGPoint+Trigonometry.swift in Sources */,
 				4594B09219AEE31E00101EB4 /* Path.swift in Sources */,
@@ -1219,6 +1258,7 @@
 				459128C31AE8B93C007C52BC /* (null) in Sources */,
 				026F21041A5FB23E00A52D0E /* Fuzzy.swift in Sources */,
 				45CFDC6D1A61CB6800053F96 /* ConvexHull.swift in Sources */,
+				457309EF1C2FB7DE000D8A1C /* Arc.swift in Sources */,
 				459EE5EC19AEC5130012E023 /* CGContext.swift in Sources */,
 				4594B08C19AEDC2100101EB4 /* SwiftGraphicsHelper.m in Sources */,
 				45E38D261A74235800EC672A /* Style.swift in Sources */,
@@ -1260,6 +1300,7 @@
 				45E298751A69B2F6006FE740 /* BezierCurveChain.swift in Sources */,
 				45B8AE8E19BCE4ED00C61A3F /* CColorConverter.m in Sources */,
 				4594B09319AEE31E00101EB4 /* Path.swift in Sources */,
+				45EBB7921CA6283200B6C442 /* LineSegment.swift in Sources */,
 				45E38D241A74235800EC672A /* Geometry+Drawable.swift in Sources */,
 				459EE5EA19AEC5130012E023 /* CGAffineTransform.swift in Sources */,
 				02DABB651A8F110F000C8D9F /* CGPathFromSVGPath.m in Sources */,
@@ -1269,6 +1310,7 @@
 				451835E31A73072E006B123B /* Lerp.swift in Sources */,
 				458C590F1A74136000E993A6 /* Insidedness.swift in Sources */,
 				45E38D2F1A74242E00EC672A /* Markup.swift in Sources */,
+				457309E61C2DFB8E000D8A1C /* DebugDrawable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1285,35 +1327,15 @@
 			target = 454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */;
 			targetProxy = 454FE68119C77993002E4DEF /* PBXContainerItemProxy */;
 		};
-		4563D3151B90AD4D005412D1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45DA4AC319AA62A800133F32 /* SwiftGraphics_iOS */;
-			targetProxy = 4563D3141B90AD4D005412D1 /* PBXContainerItemProxy */;
-		};
-		4563D31B1B90AD61005412D1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */;
-			targetProxy = 4563D31A1B90AD61005412D1 /* PBXContainerItemProxy */;
-		};
-		4563D31D1B90AD61005412D1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */;
-			targetProxy = 4563D31C1B90AD61005412D1 /* PBXContainerItemProxy */;
-		};
-		4563D31F1B90AD6A005412D1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4563D3161B90AD56005412D1 /* All Mac */;
-			targetProxy = 4563D31E1B90AD6A005412D1 /* PBXContainerItemProxy */;
-		};
-		4563D3211B90AD6A005412D1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4563D30E1B90AD3B005412D1 /* All iOS */;
-			targetProxy = 4563D3201B90AD6A005412D1 /* PBXContainerItemProxy */;
-		};
 		4582DB7919AA7A6700B7F5B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */;
 			targetProxy = 4582DB7819AA7A6700B7F5B4 /* PBXContainerItemProxy */;
+		};
+		45BB42541CA0E55100475878 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftRandom_OSX;
+			targetProxy = 45BB42531CA0E55100475878 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1394,7 +1416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
@@ -1437,7 +1459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1451,7 +1473,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1461,7 +1482,7 @@
 				INFOPLIST_FILE = "SwiftGraphics_OSX/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.schwa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SwiftGraphics;
 				SKIP_INSTALL = YES;
@@ -1473,7 +1494,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1483,7 +1503,7 @@
 				INFOPLIST_FILE = "SwiftGraphics_OSX/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.schwa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SwiftGraphics;
 				SKIP_INSTALL = YES;
@@ -1528,7 +1548,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1542,7 +1561,7 @@
 				INFOPLIST_FILE = "SwiftGraphics_OSX_Playground/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.schwa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SwiftGraphicsPlayground;
 				SKIP_INSTALL = YES;
@@ -1554,7 +1573,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1564,52 +1582,10 @@
 				INFOPLIST_FILE = "SwiftGraphics_OSX_Playground/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.schwa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SwiftGraphicsPlayground;
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		4563D30F1B90AD3B005412D1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		4563D3101B90AD3B005412D1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		4563D3181B90AD56005412D1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		4563D3191B90AD56005412D1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		45B8AE9119BCE56E00C61A3F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		45B8AE9219BCE56E00C61A3F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1705,33 +1681,6 @@
 			buildConfigurations = (
 				454FE67619C77031002E4DEF /* Debug */,
 				454FE67719C77031002E4DEF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4563D3131B90AD3B005412D1 /* Build configuration list for PBXAggregateTarget "All iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4563D30F1B90AD3B005412D1 /* Debug */,
-				4563D3101B90AD3B005412D1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4563D3171B90AD56005412D1 /* Build configuration list for PBXAggregateTarget "All Mac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4563D3181B90AD56005412D1 /* Debug */,
-				4563D3191B90AD56005412D1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		45B8AE9019BCE56E00C61A3F /* Build configuration list for PBXAggregateTarget "All" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				45B8AE9119BCE56E00C61A3F /* Debug */,
-				45B8AE9219BCE56E00C61A3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

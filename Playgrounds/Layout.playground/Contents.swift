@@ -52,7 +52,7 @@ extension SequenceType where Self.Generator.Element : Drawable, Self.Generator.E
     func row() -> Drawable {
         return DrawableClosure() {
             (context: CGContext) in
-            var offset = CGPointZero
+            var offset = CGPoint.zero
             for object in GeneratorSequence(self.generate()) {
                 context.with(CGAffineTransform(translation: offset - object.frame.origin)) {
                     context.draw(object)
@@ -66,7 +66,7 @@ extension SequenceType where Self.Generator.Element : Drawable, Self.Generator.E
 func row <T: Drawable where T: Frameable> (objects: [T]) -> Drawable {
     return DrawableClosure() {
         (context: CGContext) in
-        var offset = CGPointZero
+        var offset = CGPoint.zero
         for object in objects {
             context.with(CGAffineTransform(translation: offset - object.frame.origin)) {
                 context.draw(object)
@@ -85,7 +85,7 @@ let circles = [
 //let drawable = row(circles)
 let drawable = circles.row()
 
-var frame = circles.reduce(CGRectZero) {
+var frame = circles.reduce(CGRect.zero) {
     return $0.rectByUnion(CGRect(origin: $0.maxXMinY, size: $1.frame.size))
 }
 let context = CGContextRef.bitmapContext(frame)

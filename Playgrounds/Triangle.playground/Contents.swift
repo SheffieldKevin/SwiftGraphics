@@ -1,16 +1,17 @@
 // Playground - noun: a place where people can play
 
-import Cocoa
+// Order of imports is very important
+import CoreGraphics
+import SwiftUtilities
+import SwiftRandom
 import SwiftGraphics
 import SwiftGraphicsPlayground
-import XCPlayground
-import SwiftUtilities
 
 func dump(t: Triangle) -> String {
     var s = ""
     s += "Points: \(t.vertex)\n"
     s += "Lengths: \(t.lengths)\n"
-    s += "Angles: \(RadiansToDegrees(t.angles.0), RadiansToDegrees(t.angles.1), RadiansToDegrees(t.angles.2))\n"
+    s += "Angles: \(radiansToDegrees(t.angles.0), radiansToDegrees(t.angles.1), radiansToDegrees(t.angles.2))\n"
     s += "isIsosceles: \(t.isIsosceles)\n"
     s += "isEquilateral: \(t.isEquilateral)\n"
     s += "isScalene: \(t.isScalene)\n"
@@ -20,7 +21,7 @@ func dump(t: Triangle) -> String {
     s += "isObtuse: \(t.isObtuse)\n"
     s += "isDegenerate: \(t.isDegenerate)\n"
     s += "signedArea: \(t.signedArea)\n"
-    return s    
+    return s
 }
 
 func pt(x: CGFloat, _ y: CGFloat) -> CGPoint {
@@ -39,4 +40,3 @@ let styles = stylesForMarkup(t1.markup)
 context.draw(t1.markup, styles: styles)
 
 context.nsimage
-

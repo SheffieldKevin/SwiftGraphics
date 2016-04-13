@@ -63,7 +63,7 @@ class Dragging: NSObject {
 
     var draggedObject: Thing? = nil
     var dragBeganLocation: CGPoint?
-    var offset: CGPoint = CGPointZero
+    var offset: CGPoint = CGPoint.zero
     var selectionMarquee: SelectionMarquee = SelectionMarquee()
 
 
@@ -117,7 +117,7 @@ class Dragging: NSObject {
                 break
             case .Ended:
                 draggedObject = nil
-                offset = CGPointZero
+                offset = CGPoint.zero
                 self.selectionMarquee.active = false
                 self.selectionMarquee.layer.removeFromSuperlayer()
 
@@ -141,7 +141,7 @@ class Dragging: NSObject {
         model.selectedObjectIndices.removeAllIndexes()
     }
 
-    func hitTest(location: CGPoint) -> (Int,Thing)? {
+    func hitTest(location: CGPoint) -> (Int, Thing)? {
         return model.hitTest(location)
     }
 
@@ -156,4 +156,3 @@ class Dragging: NSObject {
 
 
 }
-

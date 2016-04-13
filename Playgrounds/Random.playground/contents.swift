@@ -29,20 +29,3 @@ let b = rng.random_array(52, initial: 0) { $0 }
 b
 
 cards2 = rng.shuffled(cards2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

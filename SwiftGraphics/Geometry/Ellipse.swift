@@ -68,7 +68,7 @@ public extension Ellipse {
 
         var rotation = rotation
         if size.height > size.width {
-            rotation = DegreesToRadians(90)
+            rotation = degreesToRadians(90)
         }
 
         self.init(center: center, semiMajorAxis: semiMajorAxis, semiMinorAxis: semiMinorAxis, rotation: rotation)

@@ -31,7 +31,7 @@ public func == (lhs: CGAffineTransform, rhs: CGAffineTransform) -> Bool {
 public extension CGAffineTransform {
 
     static var identity: CGAffineTransform = CGAffineTransformIdentity
-    
+
     /**
      Identity.
      */
@@ -52,7 +52,7 @@ public extension CGAffineTransform {
     init(a: CGFloat, b: CGFloat, c: CGFloat, d: CGFloat, tx: CGFloat, ty: CGFloat) {
         self = CGAffineTransformMake(a, b, c, d, tx, ty)
     }
-    
+
     /**
      Translation.
      */
@@ -78,7 +78,7 @@ public extension CGAffineTransform {
     init(scale: CGFloat) {
         self = CGAffineTransformMakeScale(scale, scale)
     }
-    
+
     init(scale: CGFloat, origin: CGPoint) {
         self = CGAffineTransformMake(scale, 0, 0, scale, (1 - scale) * origin.x, (1 - scale) * origin.y)
     }
@@ -114,27 +114,27 @@ public extension CGAffineTransform {
         return CGAffineTransformTranslate(self, tx, ty)
     }
 
-    func scaled(scale: CGSize) -> CGAffineTransform  {
+    func scaled(scale: CGSize) -> CGAffineTransform {
         return CGAffineTransformScale(self, scale.width, scale.height)
     }
 
-    func scaled(sx sx: CGFloat, sy: CGFloat) -> CGAffineTransform  {
+    func scaled(sx sx: CGFloat, sy: CGFloat) -> CGAffineTransform {
         return CGAffineTransformScale(self, sx, sy)
     }
 
-    func scaled(scale: CGFloat) -> CGAffineTransform  {
+    func scaled(scale: CGFloat) -> CGAffineTransform {
         return CGAffineTransformScale(self, scale, scale)
     }
-    
-    func scaled(scale: CGFloat, origin: CGPoint) -> CGAffineTransform  {
+
+    func scaled(scale: CGFloat, origin: CGPoint) -> CGAffineTransform {
         return self + CGAffineTransform(scale: scale, origin: origin)
     }
 
-    func rotated(angle: CGFloat) -> CGAffineTransform  {
+    func rotated(angle: CGFloat) -> CGAffineTransform {
         return CGAffineTransformRotate(self, angle)
     }
 
-    func rotated(rotation: CGFloat, origin: CGPoint) -> CGAffineTransform  {
+    func rotated(rotation: CGFloat, origin: CGPoint) -> CGAffineTransform {
         return CGAffineTransform(rotation: rotation, origin: origin)
     }
 
@@ -160,32 +160,32 @@ public extension CGAffineTransform {
         return self
     }
 
-    mutating func scale(scale: CGSize) -> CGAffineTransform  {
+    mutating func scale(scale: CGSize) -> CGAffineTransform {
         self = scaled(sx: scale.width, sy: scale.height)
         return self
     }
 
-    mutating func scale(sx: CGFloat, _ sy: CGFloat) -> CGAffineTransform  {
+    mutating func scale(sx: CGFloat, _ sy: CGFloat) -> CGAffineTransform {
         self = scaled(sx: sx, sy: sy)
         return self
     }
 
-    mutating func scale(scale: CGFloat) -> CGAffineTransform  {
+    mutating func scale(scale: CGFloat) -> CGAffineTransform {
         self = scaled(sx: scale, sy: scale)
         return self
     }
-    
-    mutating func scale(scale: CGFloat, origin: CGPoint) -> CGAffineTransform  {
+
+    mutating func scale(scale: CGFloat, origin: CGPoint) -> CGAffineTransform {
         self = scaled(scale, origin: origin)
         return self
     }
 
-    mutating func rotate(angle: CGFloat) -> CGAffineTransform  {
+    mutating func rotate(angle: CGFloat) -> CGAffineTransform {
         self = rotated(angle)
         return self
     }
 
-    mutating func rotate(angle: CGFloat, origin: CGPoint) -> CGAffineTransform  {
+    mutating func rotate(angle: CGFloat, origin: CGPoint) -> CGAffineTransform {
         self = rotated(angle, origin: origin)
         return self
     }
@@ -241,7 +241,7 @@ public func *= (inout lhs: CGRect, rhs: CGAffineTransform) {
 
 public extension CGAffineTransform {
     func transformVector(vec: CGPoint) -> CGPoint {
-        return CGPoint(x: vec.x * a + vec.y * d, y: vec.x * c + vec.y * d);
+        return CGPoint(x: vec.x * a + vec.y * d, y: vec.x * c + vec.y * d)
     }
 }
 
@@ -252,10 +252,10 @@ public extension CGAffineTransform {
         assert(v.count == 6)
         self = CGAffineTransformMake(v[0], v[1], v[2], v[3], v[4], v[5])
     }
-    
+
     var values: [CGFloat] {
         get {
-            return [a,b,c,d,tx,ty]
+            return [a, b, c, d, tx, ty]
         }
         set(v) {
             assert(v.count == 6)
@@ -275,10 +275,10 @@ public extension CGAffineTransform {
         }
         self = current
     }
-    
+
     // Constructor with two fingers' positions while moving fingers.
     init(from1: CGPoint, from2: CGPoint, to1: CGPoint, to2: CGPoint) {
-        if (from1 == from2 || to1 == to2) {
+        if from1 == from2 || to1 == to2 {
             self = CGAffineTransform.identity
         } else {
             let scale = to2.distanceTo(to1) / from2.distanceTo(from1)
@@ -289,4 +289,3 @@ public extension CGAffineTransform {
         }
     }
 }
-

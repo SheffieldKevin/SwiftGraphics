@@ -56,8 +56,8 @@ class MetaballsView: NSView {
         }
         bouncingBalls.draw(context)
 
-        
-        context.drawLabel("\(Int(fps))", point: CGPoint(x: 20,y: 20), size: 18)
+
+        context.drawLabel("\(Int(fps))", point: CGPoint(x: 20, y: 20), size: 18)
     }
 
     override func setFrameSize(newSize: NSSize) {
@@ -73,7 +73,7 @@ class MetaballsView: NSView {
     override func mouseDown(theEvent: NSEvent) {
         self.playing = self.playing ? false : true
     }
-    
+
     func magnitudeAtPoint(point: CGPoint) -> CGFloat {
         let magnitude: CGFloat = self.bouncingBalls.balls.reduce(0.0) {
             (u: CGFloat, ball: Ball) -> CGFloat in
@@ -100,10 +100,3 @@ class MetaballsView: NSView {
         }
     }
 }
-
-
-
-
-
-
-

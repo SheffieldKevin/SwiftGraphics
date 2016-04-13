@@ -15,7 +15,7 @@ class OmniGraffleLoader {
     let path: String
     var doc: OmniGraffleDocumentModel!
     var root: Node!
-    
+
     init(path: String) throws {
         self.path = path
         doc = try OmniGraffleDocumentModel(path: path)

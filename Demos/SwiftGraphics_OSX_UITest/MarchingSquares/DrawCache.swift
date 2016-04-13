@@ -57,6 +57,3 @@ func drawCache(key: String, frame: CGRect, block: CGContext -> Void) -> CGImage?
 
     return image
 }
-
-
-

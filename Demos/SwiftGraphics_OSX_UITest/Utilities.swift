@@ -27,4 +27,3 @@ extension NSData {
         self.init(data: unzippedData)
     }
 }
-

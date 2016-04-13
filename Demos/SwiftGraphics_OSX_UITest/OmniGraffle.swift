@@ -15,7 +15,7 @@ class OmniGraffleDocumentModel {
     var frame: CGRect!
     var rootNode: OmniGraffleGroup!
     var nodesByID: [Int: OmniGraffleNode] = [:]
-    
+
     init(path: String) throws {
         self.path = path
         try self.load()
@@ -33,7 +33,7 @@ class OmniGraffleDocumentModel {
 
 @objc class OmniGraffleGroup: OmniGraffleNode, GroupNode {
     var children: [Node] = []
-    
+
     init(children: [Node]) {
         self.children = children
     }
@@ -69,7 +69,7 @@ extension OmniGraffleDocumentModel {
             let size = try! StringToSize(d["CanvasSize"] as! String)
             frame = CGRect(origin: origin, size: size)
 //            print(nodesByID)
-            
+
             let nodes = nodesByID.values.filter {
                 (node: Node) -> Bool in
                 return node is OmniGraffleLine
@@ -96,7 +96,7 @@ extension OmniGraffleDocumentModel {
             }
         }
     }
-    
+
     func _processRoot(d: NSDictionary) {
         let graphicslist = d["GraphicsList"] as! [NSDictionary]
         var children: [Node] = []
@@ -108,7 +108,7 @@ extension OmniGraffleDocumentModel {
         let group = OmniGraffleGroup(children: children)
         rootNode = group
     }
-    
+
     func _processDictionary(d: NSDictionary) -> OmniGraffleNode! {
         if let className = d["Class"] as? String {
             switch className {
@@ -141,4 +141,3 @@ extension OmniGraffleDocumentModel {
         return nil
     }
 }
-

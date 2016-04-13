@@ -12,12 +12,12 @@ import CoreGraphics
 
 public extension CGRect {
     init(size: CGSize) {
-        self.origin = CGPointZero
+        self.origin = CGPoint.zero
         self.size = size
     }
-    
+
     init(width: CGFloat, height: CGFloat) {
-        self.origin = CGPointZero
+        self.origin = CGPoint.zero
         self.size = CGSize(width: width, height: height)
     }
 
@@ -27,7 +27,7 @@ public extension CGRect {
     }
 
     init(w width: CGFloat, h height: CGFloat) {
-        self.origin = CGPointZero
+        self.origin = CGPoint.zero
         self.size = CGSize(width: width, height: height)
     }
 
@@ -148,11 +148,11 @@ public extension CGRect {
         return copy
     }
 
-    func insetBy(dx  dx: CGFloat, dy: CGFloat) -> CGRect {
-        var copy = self
-        copy.insetInPlace(dx: dx, dy: dy)
-        return copy
-        }
+//    func insetBy(dx  dx: CGFloat, dy: CGFloat) -> CGRect {
+//        var copy = self
+//        copy.insetInPlace(dx: dx, dy: dy)
+//        return copy
+//        }
 
     // TODO: Deprecate
     func insetted(dx  dx: CGFloat, dy: CGFloat) -> CGRect {
@@ -173,7 +173,7 @@ public extension CGRect {
         }
         return result
     }
-    
+
     static func unionOfPoints(points: [CGPoint]) -> CGRect {
         if points.isEmpty {
             return CGRect.null
@@ -184,11 +184,11 @@ public extension CGRect {
         }
         return result
     }
-    
+
     func rectByUnion(point: CGPoint) -> CGRect {
         return union(CGRect(center: point, radius: 0.0))
     }
-    
+
     mutating func union(point: CGPoint) {
         unionInPlace(CGRect(center: point, radius: 0.0))
     }
@@ -212,5 +212,3 @@ public extension CGRect {
     }
 
 }
-
-

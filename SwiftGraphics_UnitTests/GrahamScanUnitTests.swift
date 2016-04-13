@@ -14,17 +14,17 @@ class GrahamScanUnitTests: XCTestCase {
     override func setUp() {
         super.setUp()
     }
-    
+
     func testGrahamScan() {
         let points = [
-            CGPointMake(100, 100),
-            CGPointMake(10, 300),
-            CGPointMake(30, 30),
-            CGPointMake(200, 100),
-            CGPointMake(150, 40)
+            CGPoint(x: 100, y: 100),
+            CGPoint(x: 10, y: 300),
+            CGPoint(x: 30, y: 30),
+            CGPoint(x: 200, y: 100),
+            CGPoint(x: 150, y: 40)
         ]
 
         let hull = grahamScan(points)
-        XCTAssertEqual(hull, [CGPointMake(30, 30), CGPointMake(10, 300), CGPointMake(200, 100), CGPointMake(150, 40)])
+        XCTAssertEqual(hull, [CGPoint(x: 30, y: 30), CGPoint(x: 10, y: 300), CGPoint(x: 200, y: 100), CGPoint(x: 150, y: 40)])
     }
 }

@@ -1,6 +1,7 @@
 See https://github.com/schwa/swiftgraphics/issues for more, major issues.
 
 TODO list is mainly a list of thoughts/wishes. Github issues is for more concrete items.
+TODO: REMOVE - replace with github issues (or vice versa)
 
 * Too many different ways to render to a bitmap context - reduce to one or two methods
 * Make more use of Swift 2 protocol extensions.

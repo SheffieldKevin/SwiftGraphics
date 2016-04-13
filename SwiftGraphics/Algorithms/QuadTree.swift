@@ -24,12 +24,12 @@ public class QuadTree <T> {
         self.config = QuadTreeConfig(minimumNodeSize: minimumNodeSize, maximumObjectsPerNode: maximumObjectsPerNode)
         self.rootNode = QuadTreeNode(config: config, frame: frame)
     }
-    
+
     public func addObject(object: T, point: CGPoint) {
         assert(frame.contains(point))
         rootNode.addObject(object, point: point)
     }
-    
+
     public func objectsInRect(rect: CGRect) -> [T] {
         assert(frame.intersects(rect))
         return rootNode.objectsInRect(rect)
@@ -106,20 +106,20 @@ public class QuadTreeNode <T> {
     func objectsInRect(rect: CGRect) -> [T] {
         return itemsInRect(rect).map { return $0.object }
     }
-    
+
     internal func expand() {
         assert(canExpand)
         subnodes = [
-            QuadTreeNode(config: config, frame: frame.quadrant(.minXMinY)),
-            QuadTreeNode(config: config, frame: frame.quadrant(.maxXMinY)),
-            QuadTreeNode(config: config, frame: frame.quadrant(.minXMaxY)),
-            QuadTreeNode(config: config, frame: frame.quadrant(.maxXMaxY)),
+            QuadTreeNode(config: config, frame: frame.quadrant(.MinXMinY)),
+            QuadTreeNode(config: config, frame: frame.quadrant(.MaxXMinY)),
+            QuadTreeNode(config: config, frame: frame.quadrant(.MinXMaxY)),
+            QuadTreeNode(config: config, frame: frame.quadrant(.MaxXMaxY)),
             ]
         for item in items! {
             let node = subnodeForPoint(item.point)
             node.addItem(item)
         }
-        
+
         items = nil
     }
 
@@ -132,14 +132,14 @@ public class QuadTreeNode <T> {
 
     internal func subnodeForQuadrant(quadrant: Quadrant) -> QuadTreeNode! {
         if let subnodes = subnodes {
-            switch (quadrant) {
-                case .minXMinY:
+            switch quadrant {
+                case .MinXMinY:
                     return subnodes[0]
-                case .maxXMinY:
+                case .MaxXMinY:
                     return subnodes[1]
-                case .minXMaxY:
+                case .MinXMaxY:
                     return subnodes[2]
-                case .maxXMaxY:
+                case .MaxXMaxY:
                     return subnodes[3]
             }
         } else {

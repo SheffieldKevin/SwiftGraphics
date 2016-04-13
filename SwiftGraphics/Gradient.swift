@@ -14,52 +14,52 @@ public struct Gradient {
     public var colors: [CGColor]? { didSet { cached = nil }}
     public var locations: [CGFloat]? { didSet { cached = nil }}
     public var orientation: (CGPoint, CGPoint)?
-    
+
     public init() {}
     public init(colors: [CGColor], axial: Bool = false) {
         self.axial = axial
         self.colors = colors
     }
-    public init(colors: [(CGFloat,CGFloat,CGFloat,CGFloat)], axial: Bool = false) {
+    public init(colors: [(CGFloat, CGFloat, CGFloat, CGFloat)], axial: Bool = false) {
         self.axial = axial
         setColors(colors)
     }
-    public init(colors: [(CGFloat,CGFloat,CGFloat)], axial: Bool = false) {
+    public init(colors: [(CGFloat, CGFloat, CGFloat)], axial: Bool = false) {
         self.axial = axial
         setColors(colors)
     }
-    mutating public func setColors(colors: [(CGFloat,CGFloat,CGFloat,CGFloat)]) {
-        self.colors = colors.map{ CGColor.color(red: $0.0, green: $0.1, blue: $0.2, alpha: $0.3) }
+    mutating public func setColors(colors: [(CGFloat, CGFloat, CGFloat, CGFloat)]) {
+        self.colors = colors.map { CGColor.color(red: $0.0, green: $0.1, blue: $0.2, alpha: $0.3) }
     }
-    mutating public func setColors(colors: [(CGFloat,CGFloat,CGFloat)]) {
-        self.colors = colors.map{ CGColor.color(red: $0.0, green: $0.1, blue: $0.2) }
+    mutating public func setColors(colors: [(CGFloat, CGFloat, CGFloat)]) {
+        self.colors = colors.map { CGColor.color(red: $0.0, green: $0.1, blue: $0.2) }
     }
-    
+
     private var cached: CGGradient?
     mutating public func getGradient() -> CGGradient? {
         if let colors = colors {
             if let cg = cached {
                 return cg
             }
-            
+
             let colorspace = CGColorSpaceCreateDeviceRGB()
             var components: [CGFloat] = []
             var valid = false
-            
+
             for c in colors {
                 if c.alpha < 0.01 {
                     components += [0, 0, 0, 0]
                 } else {
                     let n = Int(CGColorGetNumberOfComponents(c))
                     let a = CGColorGetComponents(c)
-                    
+
                     if n == 2 { // CGColorSpaceCreateDeviceGray
                         for _ in 0..<3 {
                             components.append(a[0])
                         }
                         components.append(a[1])
                     }
-                    else if (n == 4) {
+                    else if n == 4 {
                         for i in 0..<4 {
                             components.append(a[i])
                         }
@@ -81,7 +81,7 @@ public struct Gradient {
 }
 
 public extension CGContext {
-    
+
     public func fill(style: Gradient?) -> Bool {
         let frame = CGContextGetClipBoundingBox(self)
         if style != nil && !frame.isEmpty {
@@ -90,8 +90,7 @@ public extension CGContext {
                 let p1 = frame.origin + style.orientation!.0 * frame.size
                 let p2 = frame.origin + style.orientation!.1 * frame.size
                 if style.axial {
-                    CGContextDrawRadialGradient(self, cgGradient,
-                        frame.mid, 0, frame.mid, max(frame.width, frame.height), CGGradientDrawingOptions())
+                    CGContextDrawRadialGradient(self, cgGradient, frame.mid, 0, frame.mid, max(frame.width, frame.height), CGGradientDrawingOptions())
                 } else {
                     CGContextDrawLinearGradient(self, cgGradient, p1, p2, CGGradientDrawingOptions())
                 }
@@ -100,7 +99,7 @@ public extension CGContext {
         }
         return false
     }
-    
+
     public func fillPath(style: Gradient?, path: CGPath?) -> Bool {
         var ret = false
         if style != nil && path != nil && path!.isClosed {
@@ -112,7 +111,7 @@ public extension CGContext {
         }
         return ret
     }
-    
+
     public func fillEllipseInRect(style: Gradient?, rect: CGRect) -> Bool {
         var ret = false
         if style != nil {

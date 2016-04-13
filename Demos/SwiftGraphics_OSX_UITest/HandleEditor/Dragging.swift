@@ -16,12 +16,12 @@ protocol Draggable {
 
 class Drag: NSObject, NSGestureRecognizerDelegate {
     var draggedObject: Draggable!
-    var offset: CGPoint = CGPointZero
+    var offset: CGPoint = CGPoint.zero
     var panGestureRecogniser: NSPanGestureRecognizer!
     var objectForPoint: ((CGPoint) -> (Draggable?))!
     var objectDidChange: ((Draggable) -> (Void))!
     var dragDidFinish: ((Void) -> (Void))!
-    
+
     override init() {
         super.init()
         panGestureRecogniser = NSPanGestureRecognizer(target: self, action: "pan: ")
@@ -46,7 +46,7 @@ class Drag: NSObject, NSGestureRecognizerDelegate {
             case .Ended:
                 draggedObject = nil
                 dragDidFinish?()
-            default: 
+            default:
                 break
         }
     }

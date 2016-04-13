@@ -50,7 +50,7 @@ public extension CGMutablePath {
             return self
         }
     }
-    
+
     func close() -> CGMutablePath {
         CGPathCloseSubpath(self)
         return self
@@ -118,19 +118,19 @@ public extension CGMutablePath {
     func addSmoothQuadCurveToPoint(end: CGPoint) -> CGMutablePath {
         return addQuadCurveToPoint(end, control1: outControlPoint())
     }
-    
+
     func addSmoothQuadCurveToPoint(end: CGPoint, relative: Bool) -> CGMutablePath {
         return addQuadCurveToPoint(end, control1: outControlPoint(), relative: relative)
     }
-    
+
     func addSmoothCubicCurveToPoint(end: CGPoint, control2: CGPoint) -> CGMutablePath {
         return addCubicCurveToPoint(end, control1: outControlPoint(), control2: control2)
     }
-    
+
     func addSmoothCubicCurveToPoint(end: CGPoint, control2: CGPoint, relative: Bool) -> CGMutablePath {
         return addCubicCurveToPoint(end, control1: outControlPoint(), control2: control2, relative: relative)
     }
-    
+
     private func outControlPoint() -> CGPoint {
         let n = pointCount
         return n > 1 ? 2 * currentPoint - getPoint(n - 2)! : currentPoint
@@ -160,58 +160,60 @@ public extension CGPath {
         CGPathApplyWithBlock(self) {
             (elementPtr: UnsafePointer<CGPathElement>) -> Void in
             let element: CGPathElement = elementPtr.memory
-            
+
             switch element.type.rawValue {
             case CGPathElementType.MoveToPoint.rawValue:
                 curpt = element.points.memory
                 start = curpt
                 block(type: CGPathElementType.MoveToPoint, points: [curpt])
-                
+
             case CGPathElementType.AddLineToPoint.rawValue:
                 let points = [curpt, element.points.memory]
                 curpt = points[1]
                 block(type: CGPathElementType.AddLineToPoint, points: points)
-                
+
             case CGPathElementType.AddQuadCurveToPoint.rawValue:
                 let cp = element.points.memory
                 let end = element.points.advancedBy(1).memory
                 let points = [curpt, (curpt + 2 * cp) / 3, (end + 2 * cp) / 3, end]
                 block(type: CGPathElementType.AddCurveToPoint, points: points)
                 curpt = end
-                
+
             case CGPathElementType.AddCurveToPoint.rawValue:
                 let points = [curpt, element.points.memory,
                     element.points.advancedBy(1).memory,
                     element.points.advancedBy(2).memory]
                 block(type: CGPathElementType.AddCurveToPoint, points: points)
                 curpt = points[3]
-            
+
             case CGPathElementType.CloseSubpath.rawValue:
                 block(type: CGPathElementType.CloseSubpath, points: [curpt, start])
             default: ()
             }
         }
     }
-    
+
     func getPoint(index: Int) -> CGPoint? {
         var pt: CGPoint?
         var i = 0
-        
+
         enumerate() { (type, points) -> Void in
             switch type.rawValue {
             case CGPathElementType.MoveToPoint.rawValue:
-                if index == i++ {
+                if index == i {
                     pt = points[0]
                 }
+                i += 1
             case CGPathElementType.AddLineToPoint.rawValue:
-                if index == i++ {
+                if index == i {
                     pt = points[1]
                 }
+                i += 1
             case CGPathElementType.AddCurveToPoint.rawValue:
                 if index >= i && index - i < 3 {
                     pt = points[index - i + 1]
                 }
-                i = i + 3
+                i += 3
             default: ()
             }
         }
@@ -244,7 +246,7 @@ public extension CGPath {
     public var boundingBox: CGRect {
         return CGPathGetPathBoundingBox(self)
     }
-    
+
     public var length: CGFloat {
         var ret: CGFloat = 0.0
         enumerate() {
@@ -264,10 +266,10 @@ public extension CGPath {
 // MARK: Get control points and endpoints of path segments
 
 public extension CGPath {
-    
+
     var points: [CGPoint] {
         var ret: [CGPoint] = []
-        
+
         enumerate() { (type, points) -> Void in
             switch type.rawValue {
                 case CGPathElementType.MoveToPoint.rawValue:
@@ -281,10 +283,10 @@ public extension CGPath {
         }
         return ret
     }
-    
+
     var pointCount: Int {
         var ret = 0
-        
+
         enumerate() { (type, points) -> Void in
             switch type.rawValue {
                 case CGPathElementType.MoveToPoint.rawValue:
@@ -298,10 +300,10 @@ public extension CGPath {
         }
         return ret
     }
-    
+
     var isClosed: Bool {
         var ret = false
-        
+
         CGPathApplyWithBlock(self) { (elementPtr) -> Void in
             if elementPtr.memory.type.rawValue == CGPathElementType.CloseSubpath.rawValue {
                 ret = true
@@ -314,19 +316,19 @@ public extension CGPath {
 // MARK: End points and tangent vectors
 
 public extension CGPath {
-    
+
     public var startPoint: CGPoint {
         return getPoint(0)!
     }
-    
+
     public var endPoint: CGPoint {
         return getPoint(pointCount - 1)!
     }
-    
+
     public var startTangent: CGPoint {
         return getPoint(1)! - getPoint(0)!
     }
-    
+
     public var endTangent: CGPoint {
         let n = pointCount
         return getPoint(n - 1)! - getPoint(n - 2)!

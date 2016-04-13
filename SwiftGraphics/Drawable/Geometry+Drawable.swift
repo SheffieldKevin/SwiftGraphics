@@ -84,3 +84,14 @@ extension RegularPolygon: Drawable {
     }
 }
 
+// MARK: -
+
+extension Arc: Drawable {
+
+    public func drawInContext(context: CGContext) {
+        for curve in toBezierCurves() {
+            context.draw(curve)
+        }
+    }
+
+}

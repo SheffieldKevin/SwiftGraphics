@@ -41,7 +41,7 @@ extension Ellipse: CGPathable {
     public var cgpath: CGPath {
         let path = CGPathCreateMutable()
         let (b1, b2, b3, b4) = toBezierCurves()
-        
+
         path.move(b1.start!)
         path.addCurve(BezierCurve(controls: b1.controls, end: b1.end))
         path.addCurve(BezierCurve(controls: b2.controls, end: b2.end))
@@ -105,8 +105,8 @@ extension Circle: HitTestable {
         // TODO: BROKEN!?
 
         // http: //stackoverflow.com/questions/401847/circle-rectangle-collision-detection-intersection
-        let circleDistance_x = abs(center.x - rect.origin.x);
-        let circleDistance_y = abs(center.y - rect.origin.y);
+        let circleDistance_x = abs(center.x - rect.origin.x)
+        let circleDistance_y = abs(center.y - rect.origin.y)
 
         let half_width = rect.size.width / 2
         let half_height = rect.size.height / 2

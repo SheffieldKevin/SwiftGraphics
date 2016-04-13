@@ -232,6 +232,3 @@ circleImage.toNSImage()
 let f1 = Crystallize(inputImage: image.toCIImage())
 image = f1.outputImage!.toCGImage()
 image.toNSImage()
-
-
-

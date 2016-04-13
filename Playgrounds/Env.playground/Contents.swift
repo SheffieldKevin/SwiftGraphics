@@ -8,4 +8,3 @@ import SwiftUtilities
 //SwiftGraphicsVersionNumber
 
 print("\n".join(NSProcessInfo.processInfo().environment.map() { "\($0): \($1)" }))
-

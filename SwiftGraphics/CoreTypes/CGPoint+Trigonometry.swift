@@ -9,6 +9,14 @@
 
 import CoreGraphics
 
+public func dot(u: CGPoint, _ v: CGPoint) -> CGFloat {
+    return u.x * v.x + u.y * v.y
+}
+
+public func perp(u: CGPoint, _ v: CGPoint) -> CGFloat {
+    return u.x * v.y - u.y * v.x
+}
+
 public func dotProduct(lhs: CGPoint, _ rhs: CGPoint) -> CGFloat {
     return lhs.x * rhs.x + lhs.y * rhs.y
 }
@@ -72,7 +80,7 @@ public extension CGPoint {
     func distanceTo(point: CGPoint) -> CGFloat {
         return (self - point).magnitude
     }
-    
+
     func distanceTo(p1: CGPoint, p2: CGPoint) -> CGFloat {
         return distanceToBeeline(p1, p2: p2).0
     }
@@ -88,13 +96,13 @@ public extension CGPoint {
         if p1.y == p2.y {
             return (abs(p1.y - self.y), CGPoint(x: self.x, y: p1.y))
         }
-        
+
         let t1 = (p2.y - p1.y) / (p2.x - p1.x)
         let t2 = -1 / t1
         let numerator = self.y - p1.y + p1.x * t1 - self.x * t2
         let perpx = numerator / (t1 - t2)
         let perp = CGPoint(x: perpx, y: p1.y + (perpx - p1.x) * t1)
-        
+
         return (distanceTo(perp), perp)
     }
 
@@ -129,26 +137,26 @@ public func angle(vertex: CGPoint, _ p1: CGPoint, _ p2: CGPoint) -> CGFloat {
 // MARK: Relative point calculation methods like ruler tools
 
 public extension CGPoint {
-    
+
     /**
      Calculate a point with polar angle and radius based on this point.
-     
+
      - parameter angle: polar angle in radians.
      - parameter radius: the length of the polar radius
-     
+
      - returns: the point relative to this point.
      */
     func polarPoint(angle: CGFloat, radius: CGFloat) -> CGPoint {
-        return CGPoint(x: x + radius * cos(angle), y: y + radius * sin(angle));
+        return CGPoint(x: x + radius * cos(angle), y: y + radius * sin(angle))
     }
-    
+
     /**
      Calculate a point along the direction from this point to 'dir' point.
-     
+
      - parameter dir: the direction point.
      - parameter dx: the distance from this point to the result point.
                The negative value represents along the opposite direction.
-     
+
      - returns: the point relative to this point.
      */
     func rulerPoint(dir: CGPoint, dx: CGFloat) -> CGPoint {
@@ -159,15 +167,15 @@ public extension CGPoint {
         let d = dx / len
         return CGPoint(x: x + (dir.x - x) * d, y: y + (dir.y - y) * d)
     }
-    
+
     /**
      Calculate a point along the direction from this point to 'dir' point.
      dx and dy may be negative which represents along the opposite direction.
-     
+
      - parameter dir: the direction point.
      - parameter dx: the projection distance along the direction from this point to 'dir' point.
      - parameter dy: the perpendicular distance from the result point to the line of this point to 'dir' point.
-     
+
      - returns: the point relative to this point.
      */
     func rulerPoint(dir: CGPoint, dx: CGFloat, dy: CGFloat) -> CGPoint {
@@ -184,9 +192,9 @@ public extension CGPoint {
 // MARK: Vector projection
 
 public extension CGPoint {
-    
+
     public static var vectorTolerance: CGFloat = 1e-4
-    
+
     //! Returns whether this vector is perpendicular to another vector.
     func isPerpendicularTo(vec: CGPoint) -> Bool {
         let sinfz = abs(crossProduct(self, vec))
@@ -199,7 +207,7 @@ public extension CGPoint {
 
     /**
      Returns the length of the vector which perpendicular to the projection of this vector onto xAxis vector.
-     
+
      - parameter   xAxis: projection target vector.
      - returns: perpendicular distance which is positive if this vector is in the CCW direction of xAxis and negative if clockwise.
      */
@@ -207,20 +215,20 @@ public extension CGPoint {
         let len = xAxis.magnitude
         return len == 0 ? magnitude : crossProduct(xAxis, self) / len
     }
-    
+
     //! Returns the proportion of the projection vector onto xAxis, projection==xAxis * proportion
     func projectScaleToVector(xAxis: CGPoint) -> CGFloat {
         let d2 = xAxis.magnitudeSquared
         return d2 == 0 ? 0.0 : dotProduct(self, xAxis) / d2
     }
-    
+
     //! Returns the projection vector and perpendicular vector, self==proj+perp
     func projectResolveVector(xAxis: CGPoint) -> (CGPoint, CGPoint) {
         let s = projectScaleToVector(xAxis)
         let proj = xAxis * s, perp = self - proj
         return (proj, perp)
     }
-    
+
     //! Vector decomposition onto two vectors: self==u*uAxis + v*vAxis
     func resolveVector(uAxis: CGPoint, vAxis: CGPoint) -> (CGFloat, CGFloat) {
         let denom = crossProduct(uAxis, vAxis)

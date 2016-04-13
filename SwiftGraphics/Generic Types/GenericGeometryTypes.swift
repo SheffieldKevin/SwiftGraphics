@@ -18,10 +18,10 @@
 import CoreGraphics
 
 public protocol ArithmeticType: Comparable {
-    func +(lhs: Self, rhs: Self) -> Self
-    func -(lhs: Self, rhs: Self) -> Self
-    func *(lhs: Self, rhs: Self) -> Self
-    func /(lhs: Self, rhs: Self) -> Self
+    func + (lhs: Self, rhs: Self) -> Self
+    func - (lhs: Self, rhs: Self) -> Self
+    func * (lhs: Self, rhs: Self) -> Self
+    func / (lhs: Self, rhs: Self) -> Self
 }
 
 extension Int: ArithmeticType {
@@ -41,22 +41,22 @@ extension CGFloat: ArithmeticType {
 */
 
 public protocol PointType {
-    typealias ScalarType
-    
+    associatedtype ScalarType
+
     var x: ScalarType { get }
     var y: ScalarType { get }
     }
 
 public protocol SizeType {
-    typealias ScalarType
-    
+    associatedtype ScalarType
+
     var width: ScalarType { get }
     var height: ScalarType { get }
     }
 
 public protocol RectType {
-    typealias OriginType
-    typealias SizeType
+    associatedtype OriginType
+    associatedtype SizeType
 
     var origin: OriginType { get }
     var size: SizeType { get }
@@ -145,4 +145,3 @@ public func == <T> (lhs: GenericSize <T>, rhs: GenericSize <T>) -> Bool {
 //public func == <T,U> (lhs: GenericRect <T,U>, rhs: GenericRect <T,U>) -> Bool {
 //    return lhs.origin == rhs.origin && lhs.size == rhs.size
 //}
-

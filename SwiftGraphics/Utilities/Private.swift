@@ -79,5 +79,3 @@ struct SlidingWindow <T>: GeneratorType {
 func compare <T: Comparable> (lhs: T, rhs: T) -> Int {
     return lhs == rhs ? 0 : (lhs > rhs ? 1 : -1)
 }
-
-

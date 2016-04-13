@@ -39,13 +39,13 @@ class DemoView: NSView {
     override func mouseDown(theEvent: NSEvent) {
         let p = self.convertPoint(theEvent.locationInWindow, fromView: nil)
         self.addPoint(p)
-    }    
+    }
 
     override func mouseDragged(theEvent: NSEvent) {
         let p = self.convertPoint(theEvent.locationInWindow, fromView: nil)
         self.addPoint(p)
-    }    
-    
+    }
+
     func addPoint(p: CGPoint) {
         self.points.append(p)
         self.needsDisplay = true
