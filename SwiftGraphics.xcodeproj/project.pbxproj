@@ -82,7 +82,6 @@
 		4563EFD91A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
 		4563EFDA1A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
 		45646BBF1C55DAC90042E2C0 /* SwiftGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454D550719AA5CE6000E3EB3 /* SwiftGraphics.framework */; };
-		4567D44C1B800E3900BED1CC /* SwiftUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452034A21B2B8518002CCCFA /* SwiftUtilities.framework */; };
 		456877E219B6857B004BEFD6 /* CoordinateSystems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456877E119B6857B004BEFD6 /* CoordinateSystems.swift */; };
 		456C315C19C65B0E003AA1DF /* Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456C315B19C65B0E003AA1DF /* Ellipse.swift */; };
 		456C315D19C65B0E003AA1DF /* Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456C315B19C65B0E003AA1DF /* Ellipse.swift */; };
@@ -172,7 +171,6 @@
 		45FA46521A7F3DBB000473B5 /* Rectangle+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FA46501A7F3DBB000473B5 /* Rectangle+Markup.swift */; };
 		45FA46541A7F3EA9000473B5 /* Circle+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FA46531A7F3EA9000473B5 /* Circle+Markup.swift */; };
 		45FA46551A7F3EA9000473B5 /* Circle+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FA46531A7F3EA9000473B5 /* Circle+Markup.swift */; };
-		6EFD360C1BE2748700571C44 /* SwiftUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFD360B1BE2748700571C44 /* SwiftUtilities.framework */; };
 		938BCB851B801E3D00C82F1E /* TriangleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F42FF31B7E9C91005D2ADA /* TriangleTests.swift */; };
 		93F42FF41B7E9C91005D2ADA /* TriangleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F42FF31B7E9C91005D2ADA /* TriangleTests.swift */; };
 /* End PBXBuildFile section */
@@ -220,21 +218,21 @@
 			remoteGlobalIDString = 45E4F34F1C641722005B0938;
 			remoteInfo = SwiftRandom_OSX;
 		};
-		6EF8084F1BE791AD005F0975 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 45E8EEA4199A8E080035C722;
-			remoteInfo = SwiftUtilities_OSX;
-		};
-		6EF808511BE791AD005F0975 /* PBXContainerItemProxy */ = {
+		6E0775DB1CBEB09C00E8C1F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 45E8EEC6199A8EA50035C722;
 			remoteInfo = SwiftUtilities_iOS;
 		};
-		6EF808531BE791AD005F0975 /* PBXContainerItemProxy */ = {
+		6E0775DD1CBEB09C00E8C1F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45E8EEA4199A8E080035C722;
+			remoteInfo = SwiftUtilities_OSX;
+		};
+		6E0775DF1CBEB09C00E8C1F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */;
 			proxyType = 2;
@@ -395,7 +393,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45BB42551CA0E55C00475878 /* SwiftRandom.framework in Frameworks */,
-				452034AA1B2B8538002CCCFA /* SwiftUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,9 +470,9 @@
 		4520349B1B2B8518002CCCFA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				452034A41B2B8518002CCCFA /* SwiftUtilities.framework */,
-				452034A21B2B8518002CCCFA /* SwiftUtilities.framework */,
-				452034A61B2B8518002CCCFA /* SwiftUtilities_OSX_Tests.xctest */,
+				6E0775DC1CBEB09C00E8C1F2 /* SwiftUtilities.framework */,
+				6E0775DE1CBEB09C00E8C1F2 /* SwiftUtilities.framework */,
+				6E0775E01CBEB09C00E8C1F2 /* SwiftUtilities_OSX_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -833,16 +830,6 @@
 			name = "Very WIP";
 			sourceTree = "<group>";
 		};
-		6EF808491BE791AD005F0975 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6EF808501BE791AD005F0975 /* SwiftUtilities.framework */,
-				6EF808521BE791AD005F0975 /* SwiftUtilities.framework */,
-				6EF808541BE791AD005F0975 /* SwiftUtilities_OSX_Tests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -910,7 +897,6 @@
 			);
 			dependencies = (
 				45BB42541CA0E55100475878 /* PBXTargetDependency */,
-				452034A81B2B852A002CCCFA /* PBXTargetDependency */,
 			);
 			name = SwiftGraphics_OSX;
 			productName = SwiftGraphics;
@@ -1032,27 +1018,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		6EF808501BE791AD005F0975 /* SwiftUtilities.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftUtilities.framework;
-			remoteRef = 6EF8084F1BE791AD005F0975 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6EF808521BE791AD005F0975 /* SwiftUtilities.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftUtilities.framework;
-			remoteRef = 6EF808511BE791AD005F0975 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		452034A61B2B8518002CCCFA /* SwiftUtilities_OSX_Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftUtilities_OSX_Tests.xctest;
-			remoteRef = 452034A51B2B8518002CCCFA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		45BB424E1CA0E51800475878 /* SwiftRandom.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1065,6 +1030,27 @@
 			fileType = wrapper.framework;
 			path = SwiftRandom.framework;
 			remoteRef = 45BB424F1CA0E51800475878 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6E0775DC1CBEB09C00E8C1F2 /* SwiftUtilities.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftUtilities.framework;
+			remoteRef = 6E0775DB1CBEB09C00E8C1F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6E0775DE1CBEB09C00E8C1F2 /* SwiftUtilities.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftUtilities.framework;
+			remoteRef = 6E0775DD1CBEB09C00E8C1F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6E0775E01CBEB09C00E8C1F2 /* SwiftUtilities_OSX_Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftUtilities_OSX_Tests.xctest;
+			remoteRef = 6E0775DF1CBEB09C00E8C1F2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1416,7 +1402,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
@@ -1459,7 +1445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1482,7 +1468,7 @@
 				INFOPLIST_FILE = "SwiftGraphics_OSX/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.schwa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SwiftGraphics;
 				SKIP_INSTALL = YES;
@@ -1503,7 +1489,7 @@
 				INFOPLIST_FILE = "SwiftGraphics_OSX/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.schwa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SwiftGraphics;
 				SKIP_INSTALL = YES;
